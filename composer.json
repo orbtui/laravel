@@ -1,0 +1,43 @@
+{
+    "name": "orbtui/laravel",
+    "description": "Store your language lines in the database, yaml or other sources",
+    "keywords": [
+        "laravel",
+        "laravel-translation-loader",
+        "translate",
+        "database",
+        "db",
+        "language",
+        "i8n"
+    ],
+    "homepage": "https://github.com/orbtui/laravel",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orbtall\\OrbitUI\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orbtall\\OrbitUI\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orbtall\\OrbitUI\\OrbitUIServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
