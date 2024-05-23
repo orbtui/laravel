@@ -1,27 +1,48 @@
 {
     "name": "orbtui/laravel",
     "description": "Fluid user interface, easy to use and integrated with Livewire.",
-    "author": "Orbtall",
-    "email": "opensource@orbtall.com",
-    "keywords": [],
+    "authors": [
+        {
+          "name": "Orbtall LLC",
+          "email": "opensource@orbtall.com"
+        }
+      ],
+    "keywords": [
+        "ui",
+        "user interface",
+        "livewire",
+        "alpine",
+        "components"
+    ],
     "homepage": "https://www.orbtui.com",
     "license": "MIT",
     "require": {
-        "php": "^8.0"
+        "php": "^8.1"
     },
     "autoload": {
-        "psr-4": {
-            "OrbtUI\\": "src"
-        }
+      "files": [
+        "src/Helpers/helpers.php"
+      ],
+      "psr-4": {
+        "OrbtUI\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Tests\\": "tests/"
+      }
     },
     "config": {
         "sort-packages": true
     },
     "extra": {
         "laravel": {
-            "providers": [
-                "OrbtUI\\OrbtUIServiceProvider"
-            ]
+          "providers": [
+            "OrbtUI\\OrbtUIServiceProvider"
+          ],
+          "aliases": {
+            "OrbtUI": "OrbtUI\\OrbtUI"
+          }
         }
     },
     "minimum-stability": "dev",
