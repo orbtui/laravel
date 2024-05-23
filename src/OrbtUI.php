@@ -72,7 +72,7 @@ class OrbtUI extends Component
                         case str_starts_with($key, 'styles') :
                             $this->styles()->add($value);
 
-                        case str_starts_with($key, 'classes') :
+                        case str_starts_with($key, 'className') :
                             $this->classes()->add($value);
 
                     }

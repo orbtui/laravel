@@ -7,6 +7,8 @@ use OrbtUI\Exceptions\ClassesNotArrayException;
 class Clazz
 {
 
+    private $classes = [];
+
     public function add($classes)
     {
 
@@ -14,11 +16,13 @@ class Clazz
             throw new ClassesNotArrayException();
         }
 
+        $this->classes = $classes;
+
     }
 
     public function render()
     {
-        return '';
+        return $this->classes;
     }
 
 }
