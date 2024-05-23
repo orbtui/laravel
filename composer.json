@@ -17,16 +17,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Orbtall\\OrbitUI\\": "src"
+            "OrbitUI\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Orbtall\\OrbitUI\\Test\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
@@ -34,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Orbtall\\OrbitUI\\OrbitUIServiceProvider"
+                "OrbitUI\\OrbitUIServiceProvider"
             ]
         }
     },

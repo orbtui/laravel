@@ -14,6 +14,8 @@ class OrbitUIServiceProvider extends ServiceProvider {
 
         parent::register();
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'orbtui');
+
     }
 
     /**
