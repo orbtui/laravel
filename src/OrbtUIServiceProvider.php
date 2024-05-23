@@ -17,7 +17,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'orbtui');
 
-        $this->publishes([__DIR__.'/../resources/assets/*' => base_path('public/assets')]);
+        $this->publishes([__DIR__.'/../public/assets' => base_path('public/assets')], 'public');
 
     }
 
