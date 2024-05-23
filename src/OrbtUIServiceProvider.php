@@ -17,6 +17,8 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'orbtui');
 
+        $this->publishes([__DIR__.'/../resources/assets/*' => base_path('public/assets')]);
+
     }
 
     /**
@@ -24,7 +26,9 @@ class OrbtUIServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
-        Blade::component('button', Button::class);
+
+
+        Blade::componentNamespace('button', Button::class);
 
     }
 
