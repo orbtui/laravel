@@ -4,6 +4,7 @@ namespace OrbtUI;
 
 use Illuminate\View\Component;
 
+use OrbtUI\Traits\UseComponentProperties;
 use OrbtUI\Traits\UseAlpine;
 use OrbtUI\Traits\UseClasses;
 use OrbtUI\Traits\UseLivewire;
@@ -13,7 +14,6 @@ use Illuminate\View\View;
 use Closure;
 
 use Illuminate\View\ComponentAttributeBag;
-use OrbtUI\Traits\UseComponentProperties;
 
 class OrbtUI extends Component
 {
