@@ -4,6 +4,7 @@ namespace OrbtUI;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use OrbtUI\Components\Button;
 
 class OrbtUIServiceProvider extends ServiceProvider {
 
@@ -23,7 +24,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
-        Blade::componentNamespace('OrbtUI\\Components', 'orbtui');
+        Blade::component('button', Button::class);
 
     }
 
