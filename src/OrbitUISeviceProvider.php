@@ -1,7 +1,8 @@
 <?php
 
-namespace Orbtall\OrbtUI;
+namespace OrbtUI;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class OrbitUIServiceProvider extends ServiceProvider {
@@ -13,7 +14,6 @@ class OrbitUIServiceProvider extends ServiceProvider {
 
         parent::register();
 
-        $this->mergeConfigFrom(__DIR__.'/../config/translation-loader.php', 'translation-loader');
     }
 
     /**
@@ -21,18 +21,7 @@ class OrbitUIServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
-
-
-    }
-
-    /**
-     * Register the translation line loader. This method registers a
-     * `TranslationLoaderManager` instead of a simple `FileLoader` as the
-     * applications `translation.loader` instance.
-     */
-    protected function registerLoader() {
-
-
+        Blade::componentNamespace('OrbtUI\\Components', 'orbtui');
 
     }
 
