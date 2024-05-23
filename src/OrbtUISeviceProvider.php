@@ -5,7 +5,7 @@ namespace OrbtUI;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class OrbitUIServiceProvider extends ServiceProvider {
+class OrbtUIServiceProvider extends ServiceProvider {
 
     /**
      * Register the application services.
