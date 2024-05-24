@@ -4,11 +4,11 @@ namespace OrbtUI;
 
 use Illuminate\View\Component;
 
-use OrbtUI\Traits\UseComponentProperties;
-use OrbtUI\Traits\UseAlpine;
-use OrbtUI\Traits\UseClasses;
-use OrbtUI\Traits\UseLivewire;
-use OrbtUI\Traits\UseStyles;
+use OrbtUI\Traits\HasProperties;
+use OrbtUI\Traits\HasClasses;
+use OrbtUI\Traits\HasStyles;
+use OrbtUI\Traits\InteractsWithAlpine;
+use OrbtUI\Traits\InteractsWithLivewire;
 
 use Illuminate\View\View;
 use Closure;
@@ -18,7 +18,7 @@ use Illuminate\View\ComponentAttributeBag;
 class OrbtUI extends Component
 {
 
-    use UseComponentProperties, UseClasses, UseStyles, UseAlpine, UseLivewire;
+    use HasProperties, HasClasses, HasStyles, InteractsWithAlpine, InteractsWithLivewire;
 
     /**
      * Get the view / contents that represent the component.
@@ -30,22 +30,22 @@ class OrbtUI extends Component
 
             $this->translate($data);
 
-            view('ui::' . $this->component()->name(), [
-                'classes' => $this->classes()->render(),
-                'styles' => $this->styles()->render(),
-                'alpine' => $this->alpine()->render(),
-                'livewire' => $this->livewire()->render()
+            return view($this->component()->name(), [
+                'classAttributes'    => $this->classes()->render(),
+                'styleAttributes'    => $this->styles()->render(),
+                'alpineAttributes'   => $this->alpine()->render(),
+                'livewireAttributes' => $this->livewire()->render()
             ]);
 
         };
 
     }
 
-    private function translate(array $data = [])
+    protected function translate(array $data = [])
     {
 
         if (array_key_exists('componentName', $data)) {
-            $this->componentName = $data['componentName'];
+            $this->component()->setName($data['componentName']);
         }
 
         if (array_key_exists('attributes', $data)) {
@@ -60,20 +60,17 @@ class OrbtUI extends Component
 
                     switch ($key) {
 
-                        case $key == 'componentName' :
-                            $this->component()->setName($value);
-
                         case str_starts_with($key, 'x-') :
-                            $this->alpine()->add($key, $value);
+                            return $this->alpine()->add($key, $value);
 
                         case str_starts_with($key, 'wire') :
-                            $this->livewire()->add($key, $value);
+                            return $this->livewire()->add($key, $value);
 
                         case str_starts_with($key, 'styles') :
-                            $this->styles()->add($value);
+                            return $this->styles()->add($value);
 
                         case str_starts_with($key, 'className') :
-                            $this->classes()->add($value);
+                            return $this->classes()->add($value);
 
                     }
 

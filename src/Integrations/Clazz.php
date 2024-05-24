@@ -9,20 +9,16 @@ class Clazz
 
     private $classes = [];
 
-    public function add($classes)
+    public function add($class)
     {
 
-        if (!is_array($classes)) {
-            throw new ClassesNotArrayException();
-        }
-
-        $this->classes = $classes;
+       array_push($this->classes, $class);
 
     }
 
-    public function render()
+    public function mount()
     {
-        return $this->classes;
+        return implode(' ', $this->classes);
     }
 
 }

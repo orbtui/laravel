@@ -4,4 +4,4 @@ namespace OrbtUI\Components;
 
 use OrbtUI\OrbtUI;
 
-class Button extends OrbtUI {}
+class Sidebar extends OrbtUI {}

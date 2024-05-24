@@ -4,7 +4,6 @@ namespace OrbtUI;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use OrbtUI\Components\Button;
 
 class OrbtUIServiceProvider extends ServiceProvider {
 
@@ -15,9 +14,9 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         parent::register();
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ui');
+        $this->registerRoutes();
+        $this->registerViews();
 
-        $this->publishes([__DIR__.'/../public/assets' => base_path('public/assets')], 'public');
 
     }
 
@@ -28,6 +27,16 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         Blade::componentNamespace('OrbtUI\\Components', 'ui');
 
+    }
+
+    private function registerRoutes()
+    {
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+    }
+
+    private function registerViews()
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ui');
     }
 
 }
