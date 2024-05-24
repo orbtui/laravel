@@ -7,18 +7,20 @@ use OrbtUI\Exceptions\StylesNotArrayException;
 class Style
 {
 
-    public function add($styles)
+    private $styles = [];
+
+    public function add($style)
     {
-
-        if (!is_array($styles)) {
-            throw new StylesNotArrayException();
-        }
-
+        array_push($this->styles, $style);
     }
 
-    public function render()
+    public function build()
     {
-        return '';
+        if (sizeof($this->styles) > 0) {
+            return implode(' ', $this->styles);
+        } else {
+            return '';
+        }
     }
 
 }

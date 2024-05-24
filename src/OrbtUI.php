@@ -31,10 +31,8 @@ class OrbtUI extends Component
             $this->translate($data);
 
             return view($this->component()->name(), [
-                'classAttributes'    => $this->classes()->render(),
-                'styleAttributes'    => $this->styles()->render(),
-                'alpineAttributes'   => $this->alpine()->render(),
-                'livewireAttributes' => $this->livewire()->render()
+                'classAttributes' => $this->classes()->build(),
+                'styleAttributes' => $this->styles()->build()
             ]);
 
         };
@@ -60,17 +58,43 @@ class OrbtUI extends Component
 
                     switch ($key) {
 
-                        case str_starts_with($key, 'x-') :
-                            return $this->alpine()->add($key, $value);
+                        // AlpineJS Attributes
 
-                        case str_starts_with($key, 'wire') :
-                            return $this->livewire()->add($key, $value);
+                        case str_starts_with($key, 'x-') : $this->alpine()->add($key, $value); break;
 
-                        case str_starts_with($key, 'styles') :
-                            return $this->styles()->add($value);
+                        // Livewire Attributes
 
-                        case str_starts_with($key, 'className') :
-                            return $this->classes()->add($value);
+                        case str_starts_with($key, 'wire') : $this->livewire()->add($key, $value); break;
+
+                        // Styles Attributes
+
+                        case $key == 'style' && !is_array($value) : $this->styles()->add($value); break;
+
+                        // Classes Attributes
+
+                        case $key == 'class'  && !is_array($value) : $this->classes()->add($value); break;
+
+                        // Margin Attributes
+
+                        case $key == 'margin'       : $this->classes()->add('m-' . $value); break;
+                        case $key == 'marginTop'    : $this->classes()->add('mt-' . $value); break;
+                        case $key == 'marginBottom' : $this->classes()->add('mb-' . $value); break;
+                        case $key == 'marginStart'  : $this->classes()->add('ms-' . $value); break;
+                        case $key == 'marginEnd'    : $this->classes()->add('me-' . $value); break;
+
+                        // Padding Attributes
+
+                        case $key == 'padding'       : $this->classes()->add('p-' . $value); break;
+                        case $key == 'paddingTop'    : $this->classes()->add('pt-' . $value); break;
+                        case $key == 'paddingBottom' : $this->classes()->add('pb-' . $value); break;
+                        case $key == 'paddingStart'  : $this->classes()->add('ps-' . $value); break;
+                        case $key == 'paddingEnd'    : $this->classes()->add('pe-' . $value); break;
+
+                        // Color Attributes
+
+                        case $key == 'color' && in_array($value, $this->defaultColors)            : $this->classes()->add('text-' . $value); break;
+                        case $key == 'hoverColor' && in_array($value, $this->defaultColors)       : $this->classes()->add('text-hover-' . $value); break;
+                        case $key == 'backgroundColor' && in_array($value, $this->defaultColors)  : $this->classes()->add('bg-' . $value); break;
 
                     }
 

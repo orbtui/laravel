@@ -1,3 +1,3 @@
-<button type="button" {{ $attributes->class($classAttributes, $styleAttributes, $alpineAttributes, $livewireAttributes) }}>
+<button {{ $attributes->class($classAttributes)->merge(['style' => $styleAttributes]) }}>
     {{ $slot }}
 </button>

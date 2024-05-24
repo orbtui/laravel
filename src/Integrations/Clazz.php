@@ -11,12 +11,10 @@ class Clazz
 
     public function add($class)
     {
-
        array_push($this->classes, $class);
-
     }
 
-    public function mount()
+    public function build()
     {
         return implode(' ', $this->classes);
     }

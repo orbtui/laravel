@@ -1,1 +1,1 @@
-<i {{ $attributes->class($classAttributes)->merge(['style' => $classAttributes]) }}></i>
+<i {{ $attributes->class($classAttributes)->merge(['style' => $styleAttributes]) }}></i>
