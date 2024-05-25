@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Components\App;
+namespace OrbtUI\Components\Table;
 
 use OrbtUI\OrbtUI;
 
@@ -9,7 +9,7 @@ class Footer extends OrbtUI {
 
     public function __construct(string $backgroundColor = 'light')
     {
-        $this->classes()->add('app-footer bg-opacity-95 shadow');
+        $this->classes()->add('app-footer shadow');
         $this->classes()->add('bg-' . $backgroundColor);
     }
 

@@ -16,6 +16,4 @@
 
     </x-ui::app.root>
 
-    <x-ui::scroll-to-top />
-
 </x-ui::app>

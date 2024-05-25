@@ -1,4 +1,4 @@
-<div id="kt_app_sidebar" class="app-sidebar flex-column bg-light" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+<div id="kt_app_sidebar" class="app-sidebar flex-column bg-secondary" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
 
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 
@@ -3496,11 +3496,7 @@
 
     <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
         <a href="https://preview.keenthemes.com/html/metronic/docs" class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-            <span class="btn-label">Docs & Components</span>
-            <i class="ki-duotone ki-document btn-icon fs-2 m-0">
-                <span class="path1"></span>
-                <span class="path2"></span>
-            </i>
+            <span class="btn-label">Open Calendar</span>
         </a>
     </div>
 

@@ -9,7 +9,13 @@ trait HasClasses
 
     protected $defaultColors = [
         'primary',
-        'danger'
+        'secondary',
+        'info',
+        'danger',
+        'warning',
+        'success',
+        'light',
+        'dark'
     ];
 
     private ?Clazz $clazz = null;

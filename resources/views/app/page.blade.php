@@ -2,4 +2,5 @@
     <div class="d-flex flex-column flex-column-fluid">
         {{ $slot }}
     </div>
+    <x-ui::table.footer />
 </div>
