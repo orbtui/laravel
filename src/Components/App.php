@@ -6,7 +6,7 @@ use OrbtUI\OrbtUI;
 
 class App extends OrbtUI {
 
-    public function __construct(public string $title = '')
+    public function __construct(public string $footerFixed = 'true')
     {
 
     }

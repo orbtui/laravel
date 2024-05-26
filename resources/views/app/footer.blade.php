@@ -1,4 +1,4 @@
-<div {{ $attributes->class($classAttributes)->merge(['style' => $styleAttributes]) }} x-data="{ showFooter: true }" x-show="showFooter" x-on:ui-table-items-selected.camel.window="showFooter = $event.detail.items.length === 0 ? true : false" x-transition>
+<div {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
 
     <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
 

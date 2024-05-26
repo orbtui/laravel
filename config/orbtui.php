@@ -2,12 +2,14 @@
 
 return [
 
-    'default_colors' => [
+    'style' => 1,
 
-        'primary'        => '#1B84FF',
-        'primary_active' => '#056EE9',
-        'primary_light'  => '#E9F3FF'
+    'colors' => [
 
-    ]
+        //'primary'        => '#0086FF',
+        'primary'        => 'red',
+        'secondary'      => 'yellow',
+
+    ],
 
 ];

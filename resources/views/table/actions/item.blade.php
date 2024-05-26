@@ -1,4 +1,4 @@
-<div {{ $attributes->class($classAttributes) }}>
+<div {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     <x-ui::link class="menu-link align-items-center px-3" x-on:click="open = false">
         <span class="menu-title align-items-center">
             {{ $value }}

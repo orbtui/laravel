@@ -1,5 +1,5 @@
 @aware(['useCheckboxes', 'useIdentifier'])
 
-<tbody>
+<tbody {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     {{ $slot }}
 </tbody>

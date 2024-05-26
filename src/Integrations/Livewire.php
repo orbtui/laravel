@@ -2,18 +2,27 @@
 
 namespace OrbtUI\Integrations;
 
+use OrbtUI\Traits\UsePrefixProtection;
+
 class Livewire
 {
 
-    private $livewire = [];
+    use UsePrefixProtection;
 
-    public function add($key, $value)
+    private $attributes = [];
+    private $skipped  = [];
+
+    public function add($key, $value = null)
     {
+        if (!$this->isProtected($key) && !in_array($key, $this->attributes)) {
+            array_push($this->attributes, $value ? $key . '="' . $value . '"' : $key);
+        }
+        return $this;
     }
 
-    public function render()
+    public function build()
     {
-        return $this->livewire;
+        return implode(' ', $this->attributes);
     }
 
 }

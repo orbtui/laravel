@@ -1,2 +1,2 @@
-<script src="{{ route('orbtui.js.plugins') }}"></script>
-<script src="{{ route('orbtui.js.scripts') }}"></script>
+<script src="{{ URL::to('/orbtui/js/scripts.bundle.js') }}"></script>
+<script src="{{ URL::to('/orbtui/js/plugins.bundle.js') }}"></script>

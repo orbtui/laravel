@@ -1,1 +1,1 @@
-<div {{ $attributes->class($classAttributes)->merge(['style' => $styleAttributes]) }}></div>
+<div {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}></div>

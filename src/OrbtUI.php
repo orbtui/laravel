@@ -14,11 +14,12 @@ use Illuminate\View\View;
 use Closure;
 
 use Illuminate\View\ComponentAttributeBag;
+use OrbtUI\Traits\HasCss;
 
 class OrbtUI extends Component
 {
 
-    use HasProperties, HasClasses, HasStyles, InteractsWithAlpine, InteractsWithLivewire;
+    use HasProperties, HasClasses, HasStyles, HasCss, InteractsWithAlpine, InteractsWithLivewire;
 
     /**
      * Get the view / contents that represent the component.
@@ -32,7 +33,9 @@ class OrbtUI extends Component
 
             return view($this->component()->name(), [
                 'classAttributes' => $this->classes()->build(),
-                'styleAttributes' => $this->styles()->build()
+                'styleAttributes' => $this->styles()->build(),
+                'alpineAttributes' => $this->alpine()->build(),
+                'livewireAttributes' => $this->livewire()->build()
             ]);
 
         };
@@ -95,6 +98,10 @@ class OrbtUI extends Component
                         case $key == 'color' && in_array($value, $this->defaultColors)            : $this->classes()->add('text-' . $value); break;
                         case $key == 'hoverColor' && in_array($value, $this->defaultColors)       : $this->classes()->add('text-hover-' . $value); break;
                         case $key == 'backgroundColor' && in_array($value, $this->defaultColors)  : $this->classes()->add('bg-' . $value); break;
+
+                        // Alignment Attributes
+
+                        case $key == 'align' && in_array($value, $this->alignmentOptions) : $this->classes()->add('text-' . $value); break;
 
                     }
 

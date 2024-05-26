@@ -18,6 +18,12 @@ trait HasClasses
         'dark'
     ];
 
+    protected $alignmentOptions = [
+        'start',
+        'end',
+        'center'
+    ];
+
     private ?Clazz $clazz = null;
 
     public function classes()

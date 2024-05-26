@@ -12,6 +12,7 @@ class Style
     public function add($style)
     {
         array_push($this->styles, $style);
+        return $this;
     }
 
     public function build()

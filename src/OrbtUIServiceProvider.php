@@ -14,6 +14,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         parent::register();
 
+        $this->registerConfig();
         $this->registerRoutes();
         $this->registerViews();
 
@@ -27,6 +28,11 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         Blade::componentNamespace('OrbtUI\\Components', 'ui');
 
+    }
+
+    private function registerConfig()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/orbtui.php', 'orbtui');
     }
 
     private function registerRoutes()

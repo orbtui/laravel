@@ -1,3 +1,3 @@
-<th class="fw-bolder">
+<th {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     {{ $value }}
 </th>

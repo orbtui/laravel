@@ -1,4 +1,4 @@
-<td class="position-relative" x-init="$dispatch('uiHasTableActions')" x-data="{ open: false }" x-on:click.away="open = false" style="width: 0; min-width: fit-content">
+<td {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!} class="position-relative" x-init="$dispatch('uiHasTableActions')" x-data="{ open: false }" x-on:click.away="open = false" style="width: 0; min-width: fit-content">
 
     <button type="button" class="btn btn-transparent p-0 m-0" x-on:click="open = ! open;">
         <x-ui::icon type="solid" name="circle-ellipsis" hoverColor="primary" size="2" />

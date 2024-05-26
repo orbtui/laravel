@@ -2,17 +2,27 @@
 
 namespace OrbtUI\Integrations;
 
+use OrbtUI\Traits\UsePrefixProtection;
+
 class Alpine
 {
 
-    public function add($key, $value)
-    {
+    use UsePrefixProtection;
 
+    private $attributes = [];
+    private $skipped    = [];
+
+    public function add($key, $value = null)
+    {
+        if (!$this->isProtected($key)) {
+            array_push($this->attributes, $value ? $key . '="' . $value . '"' : $key);
+        }
+        return $this;
     }
 
-    public function render()
+    public function build()
     {
-        return '';
+        return implode(' ', $this->attributes);
     }
 
 }
