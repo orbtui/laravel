@@ -16,10 +16,14 @@ class Styles extends OrbtUI {
 
         $colors = config('orbtui.colors');
 
-        foreach ($colors as $name => $color) {
+        if (!empty($colors)) {
 
-            if (in_array($name, $this->defaultColors)) {
-                $this->css()->add($name, $color);
+            foreach ($colors as $name => $color) {
+
+                if (in_array($name, $this->defaultColors)) {
+                    $this->css()->add($name, $color);
+                }
+
             }
 
         }
