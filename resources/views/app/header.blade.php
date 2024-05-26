@@ -4299,13 +4299,7 @@
                                 <div class="card-toolbar">
 
                                     <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n3" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-setting-3 fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                            <span class="path5"></span>
-                                        </i>
+                                        <x-ui::icon type="duotone" name="bell" />
                                     </button>
 
                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
@@ -4323,11 +4317,7 @@
                                         <div class="menu-item px-3">
                                             <a href="#" class="menu-link flex-stack px-3">Create Payment
                                             <span class="ms-2" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference">
-                                                <i class="ki-duotone ki-information fs-6">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                    <span class="path3"></span>
-                                                </i>
+                                                <x-ui::icon type="duotone" name="bell" />
                                             </span></a>
                                         </div>
 

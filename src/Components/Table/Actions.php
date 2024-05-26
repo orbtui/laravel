@@ -11,7 +11,8 @@ class Actions extends OrbtUI {
     {
         $this->classes()
             ->add('app-footer')
-            ->add('bg-' . $backgroundColor);
+            ->add('bg-' . $backgroundColor)
+            ->add('shadow');
     }
 
 }
