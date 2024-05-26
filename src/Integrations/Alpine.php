@@ -17,6 +17,7 @@ class Alpine
         if (!$this->isProtected($key)) {
             array_push($this->attributes, $value ? $key . '="' . $value . '"' : $key);
         }
+
         return $this;
     }
 

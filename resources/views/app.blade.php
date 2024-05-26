@@ -17,12 +17,20 @@
 		<link rel="canonical" href="http://index.html" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 
+        <livewire:styles />
+
 		<x-ui::styles />
 
 	</head>
 
-<body id="kt_app_body"  data-kt-app-layout="light-sidebar" data-kt-app-footer-fixed="{{ $footerFixed }}" data-kt-app-footer-fixed-mobile="true" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
-    {{ $slot }}
-    <x-ui::scripts />
-</body>
+    <body id="kt_app_body"  data-kt-app-layout="light-sidebar" data-kt-app-footer-fixed="{{ $footerFixed }}" data-kt-app-footer-fixed-mobile="true" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+
+        {{ $slot }}
+
+        <livewire:scripts />
+
+        <x-ui::scripts />
+
+    </body>
+
 </html>

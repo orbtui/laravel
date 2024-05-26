@@ -1,3 +1,3 @@
 <th {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
-    {{ $value }}
+    {{ $slot }}
 </th>

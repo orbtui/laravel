@@ -17,11 +17,7 @@ class Style
 
     public function build()
     {
-        if (sizeof($this->styles) > 0) {
-            return implode(' ', $this->styles);
-        } else {
-            return '';
-        }
+        return 'style="' . implode(' ', $this->styles) . '"';
     }
 
 }

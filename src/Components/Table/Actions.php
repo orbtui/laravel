@@ -6,14 +6,12 @@ use OrbtUI\OrbtUI;
 
 class Actions extends OrbtUI {
 
-    public function __construct(public string $title = '')
+
+    public function __construct(string $backgroundColor = 'light')
     {
         $this->classes()
-            ->add('position-relative')
-            ->protect([
-                'position'
-            ]);
-
+            ->add('app-footer')
+            ->add('bg-' . $backgroundColor);
     }
 
 }

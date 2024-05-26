@@ -32,7 +32,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
     private function registerConfig()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/orbtui.php', 'orbtui');
+        $this->publishes([__DIR__.'/../config/orbtui.php' => config_path('orbtui')]);
     }
 
     private function registerRoutes()

@@ -1,15 +1,13 @@
 @aware(['useCheckbox'])
 
-<thead class="bg-gray-300 border-radius">
+<thead class="bg-gray-300">
     <tr>
         @if($useCheckbox)
-            <th style="width: 0; min-width: fit-content">
-                <div class="form-check form-check-custom form-check-solid form-check-sm cursor-pointer">
-                    <input class="form-check-input" type="checkbox" value="" x-bind:checked="items.length > 0" x-on:change="items = $event.target.checked ? getItems() : []" x-on:change.debounce="$dispatch('uiTableItemsSelected', { items: items })" />
-                </div>
-            </th>
+            <x-ui::table.header style="width: 0; min-width: fit-content">
+                <x-ui::checkbox value="" x-bind:checked="items.length > 0" x-on:change="items = $event.target.checked ? getItems() : []" x-on:change.debounce="$dispatch('uiTableItemsSelected', { items: items })" />
+            </x-ui::table.header>
         @endif
-        <th x-data="{ show: false} " x-show="show" x-on:ui-has-table-actions.camel.window="show = true"></th>
+        <x-ui::table.header x-data="{ show: false } " x-show="show" x-on:ui-has-table-actions.camel.window="show = true" />
         {{ $slot }}
     </tr>
 </thead>

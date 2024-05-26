@@ -1,24 +1,14 @@
-<td {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!} class="position-relative" x-init="$dispatch('uiHasTableActions')" x-data="{ open: false }" x-on:click.away="open = false" style="width: 0; min-width: fit-content">
+<div {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!} x-data="{ items: [] }" x-on:ui-table-items-selected.camel.window="items = $event.detail.items" x-on:ui-table-items-deleted.camel.window="items = []" x-show="items.length > 0" x-transition>
 
-    <button type="button" class="btn btn-transparent p-0 m-0" x-on:click="open = ! open;">
-        <x-ui::icon type="solid" name="circle-ellipsis" hoverColor="primary" size="2" />
-    </button>
+    <div class="col-md-12 d-flex align-items-center gap-2 gap-lg-3 mx-15 mx-lg-18">
 
-    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg fw-semibold position-absolute overflow-hidden text-overflow-ellipsis top-0 left-0 w-250px w-lg-300px pb-3" x-show="open" :class="open ? 'show' : ''" x-transition style="margin-top: 2px; margin-left: -19px">
-
-        <div class="menu-item px-3">
-            <div class="menu-content d-flex align-items-center fs-6 text-gray-900 fw-bold px-3 py-4">
-                <x-ui::button type="button" color="transparent" padding="0" margin="0" x-on:click="open = ! open">
-                    <x-ui::icon type="solid" name="circle-ellipsis" color="primary" size="2" marginEnd="6" />
-                </x-ui::button>
-                {{ $title }}
-            </div>
-        </div>
-
-        <x-ui::separator marginBottom="2" />
+        <span class="me-3 fs-4">
+            <x-ui::icon type="duotone" name="arrow-turn-left-up" size="5" marginEnd="2" />
+            <span x-text="items.length"></span>
+        </span>
 
         {{ $slot }}
 
     </div>
 
-</td>
+</div>

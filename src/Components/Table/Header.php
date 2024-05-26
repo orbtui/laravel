@@ -6,7 +6,7 @@ use OrbtUI\OrbtUI;
 
 class Header extends OrbtUI {
 
-    public function __construct(public string $value = '')
+    public function __construct()
     {
         $this->classes()->add('fw-bold');
     }

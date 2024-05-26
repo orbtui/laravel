@@ -4,17 +4,14 @@
 
         <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
             <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
-                <i class="ki-duotone ki-abstract-14 fs-2 fs-md-1">
-                    <span class="path1"></span>
-                    <span class="path2"></span>
-                </i>
+                <x-ui::icon type="thin" name="bars" marginEnd="2" />
             </div>
         </div>
 
 
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="index.html" class="d-lg-none">
-                <img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px" />
+                <img alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" class="h-30px" />
             </a>
         </div>
 
@@ -3765,12 +3762,7 @@
                 <div class="app-navbar-item ms-1 ms-md-4">
 
                     <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" id="kt_menu_item_wow">
-                        <i class="ki-duotone ki-notification-status fs-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                            <span class="path4"></span>
-                        </i>
+                        <x-ui::icon type="duotone" name="bell" />
                     </div>
 
                     <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="kt_menu_notifications">
@@ -4282,11 +4274,7 @@
                 <div class="app-navbar-item ms-1 ms-md-4">
 
                     <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px position-relative" id="kt_drawer_chat_toggle">
-                        <i class="ki-duotone ki-message-text-2 fs-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                        </i>
+                        <x-ui::icon type="duotone" name="bell" />
                         <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
                     </div>
 
@@ -4296,12 +4284,7 @@
                 <div class="app-navbar-item ms-1 ms-md-4">
 
                     <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                        <i class="ki-duotone ki-element-11 fs-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                            <span class="path4"></span>
-                        </i>
+                        <x-ui::icon type="duotone" name="bell" />
                     </div>
 
                     <div class="menu menu-sub menu-sub-dropdown menu-column w-100 w-sm-350px" data-kt-menu="true">
@@ -4562,22 +4545,7 @@
                 <div class="app-navbar-item ms-1 ms-md-4">
 
                     <a href="#" class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                        <i class="ki-duotone ki-night-day theme-light-show fs-1">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                            <span class="path4"></span>
-                            <span class="path5"></span>
-                            <span class="path6"></span>
-                            <span class="path7"></span>
-                            <span class="path8"></span>
-                            <span class="path9"></span>
-                            <span class="path10"></span>
-                        </i>
-                        <i class="ki-duotone ki-moon theme-dark-show fs-1">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                        </i>
+                        <x-ui::icon type="duotone" name="bell" />
                     </a>
 
 
@@ -4639,7 +4607,7 @@
                 <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
 
                     <div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                        <img src="assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
+                        <img src="https://media.licdn.com/dms/image/D4D03AQGnha_dSHakIA/profile-displayphoto-shrink_100_100/0/1696939612519?e=1722470400&v=beta&t=xpEElbkOMoBdZ97ZtpIXMMmzAOmRoiBOYWH5XVFZrzk" class="rounded-circle" alt="user" />
                     </div>
 
                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -4648,7 +4616,7 @@
                             <div class="menu-content d-flex align-items-center px-3">
 
                                 <div class="symbol symbol-50px me-5">
-                                    <img alt="Logo" src="assets/media/avatars/300-3.jpg" />
+                                    <x-ui::image source="https://media.licdn.com/dms/image/D4D03AQGnha_dSHakIA/profile-displayphoto-shrink_100_100/0/1696939612519?e=1722470400&v=beta&t=xpEElbkOMoBdZ97ZtpIXMMmzAOmRoiBOYWH5XVFZrzk" rounded="true" />
                                 </div>
 
 
@@ -4888,10 +4856,7 @@
 
                 <div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
                     <div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle">
-                        <i class="ki-duotone ki-element-4 fs-1">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                        </i>
+                        <x-ui::icon type="thin" name="bars" marginEnd="2" />
                     </div>
                 </div>
 

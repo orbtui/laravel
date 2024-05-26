@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Components\Table\Actions;
+namespace OrbtUI\Components\Table\Dropdown;
 
 use OrbtUI\OrbtUI;
 

@@ -20,6 +20,7 @@ class Footer extends OrbtUI {
             ->add('x-data', '{ showFooter: true }')
             ->add('x-show', 'showFooter')
             ->add('x-on:ui-table-items-selected.camel.window', 'showFooter = $event.detail.items.length === 0 ? true : false')
+            ->add('x-on:ui-table-items-deleted.camel.window', 'showFooter = true')
             ->add('x-transition')
             ->protect([
                 'x-data',
