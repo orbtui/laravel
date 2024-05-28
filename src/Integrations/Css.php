@@ -2,10 +2,12 @@
 
 namespace OrbtUI\Integrations;
 
-use OrbtUI\Exceptions\StylesNotArrayException;
+use OrbtUI\Traits\UseProtection;
 
 class Css
 {
+
+    use UseProtection;
 
     private $classes = [];
     private $css     = '';

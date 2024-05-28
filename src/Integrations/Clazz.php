@@ -2,13 +2,12 @@
 
 namespace OrbtUI\Integrations;
 
-use OrbtUI\Exceptions\ClassesNotArrayException;
-use OrbtUI\Traits\UsePrefixProtection;
+use OrbtUI\Traits\UseProtection;
 
 class Clazz
 {
 
-    use UsePrefixProtection;
+    use UseProtection;
 
     private $classes = [];
     private $skipped = [];

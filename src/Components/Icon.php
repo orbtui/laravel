@@ -4,20 +4,23 @@ namespace OrbtUI\Components;
 
 use OrbtUI\OrbtUI;
 
-class Icon extends OrbtUI {
+class Icon extends OrbtUI
+{
 
     public function __construct(
         string $type = 'regular',
         string $name = 'notdef',
+        string $color = 'text-dark',
         string $size = '',
         string $rotate = '',
         string $animation = '',
     ) {
 
         $this->classes()
-            ->add('fa-' . $type)
-            ->add('fa-' . $name)
-            ->protect(['fa']);
+            ->add('uicons-' . $type)
+            ->add('uicons-' . $name)
+            ->add('text-' . $color)
+            ->protect(['uicons']);
 
         if ($size) {
             $this->classes()->add('fs-' . $size);
@@ -28,7 +31,7 @@ class Icon extends OrbtUI {
         }
 
         if ($animation) {
-            $this->classes()->add('fa-' . $animation);
+            $this->classes()->add('uicons-' . $animation);
         }
 
     }

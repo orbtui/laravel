@@ -1,19 +1,15 @@
-<x-ui::app>
+<!DOCTYPE html>
+<html lang="en">
 
-    <x-ui::app.root>
+    <x-ui::head>
+    </x-ui::head>
 
-        <x-ui::app.header>
-        </x-ui::app.header>
+    <x-ui::body>
+        <x-ui::root>
+            <x-ui::page-container>
+                {{ $slot }}
+            </x-ui::page-container>
+        </x-ui::root>
+    </x-ui::body>
 
-        <x-ui::app.wrapper>
-
-            <x-ui::app.sidebar>
-            </x-ui::app.sidebar>
-
-            {{ $slot }}
-
-        </x-ui::app.wrapper>
-
-    </x-ui::app.root>
-
-</x-ui::app>
+</html>

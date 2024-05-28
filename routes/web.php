@@ -22,6 +22,6 @@ Route::controller(FrontendAssets::class)->prefix('/orbtui')->group(function () {
 
     Route::get('/fonts/{route?}', 'fonts')->where('route', '.*');
 
-    Route::get('/images/{route?}', 'images')->where('route', '.*');
+    Route::get('/media/{route?}', 'media')->where('route', '.*');
 
 });

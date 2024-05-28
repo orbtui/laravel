@@ -1,0 +1,29 @@
+<x-app-layout>
+
+	<x-app-styles />
+
+    <x-app>
+
+        <x-app-root>
+
+            <x-app-header>
+            </x-app-header>
+
+            <x-app-wrapper>
+
+                <x-sidebar>
+                </x-sidebar>
+
+                <x-app-main>
+                    {{ $slot }}
+                </x-app-main>
+
+            </x-app-wrapper>
+
+        </x-app-root>
+
+        <x-app-scripts />
+
+    </x-app>
+
+</x-app-layout>

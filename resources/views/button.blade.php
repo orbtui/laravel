@@ -1,3 +1,3 @@
-<button type="{{ $type }}" {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
+<button {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     {{ $slot }}
 </button>

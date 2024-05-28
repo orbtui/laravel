@@ -4,11 +4,10 @@ namespace OrbtUI\Components;
 
 use OrbtUI\OrbtUI;
 
-class Table extends OrbtUI {
+class Table extends OrbtUI
+{
 
-
-
-    public function __construct(public bool $useCheckbox = false, bool $striped = false, bool $bordered = false, bool $hover = false)
+    public function __construct(public bool $useCheckbox = false, bool $striped = false, bool $bordered = false, bool $hovered = false)
     {
 
         $this->classes()->add('table');
@@ -21,7 +20,7 @@ class Table extends OrbtUI {
             $this->classes()->add('table-row-bordered');
         }
 
-        if ($hover) {
+        if ($hovered) {
             $this->classes()->add('table-hover');
         }
 

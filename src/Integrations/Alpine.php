@@ -2,12 +2,12 @@
 
 namespace OrbtUI\Integrations;
 
-use OrbtUI\Traits\UsePrefixProtection;
+use OrbtUI\Traits\UseProtection;
 
 class Alpine
 {
 
-    use UsePrefixProtection;
+    use UseProtection;
 
     private $attributes = [];
     private $skipped    = [];

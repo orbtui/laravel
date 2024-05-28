@@ -25,9 +25,9 @@ class FrontendAssets
         return response()->file(__DIR__.'/../../resources/dist/js/' . $route, $this->headers()->contentType('application/javascript; charset=utf-8')->getHeaders());
     }
 
-    public function images(Request $request, $route)
+    public function media(Request $request, $route)
     {
-        return response()->file(__DIR__.'/../../resources/dist/images/' . $route, $this->headers()->contentType('image')->getHeaders());
+        return response()->file(__DIR__.'/../../resources/dist/media/' . $route, $this->headers()->contentType('image/svg+xml')->getHeaders());
     }
 
 }

@@ -35,7 +35,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "OrbtUI\\OrbtUIServiceProvider"
+            "OrbtUI\\Providers\\OrbtUIServiceProvider"
           ]
         }
     },
