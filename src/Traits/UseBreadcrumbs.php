@@ -2,27 +2,22 @@
 
 namespace OrbtUI\Traits;
 
-use OrbtUI\Integrations\Breadcrumbs;
+use OrbtUI\Integrations\BreadcrumbTrail;
 
-/**
- * @props $breadcrumbs
- */
 trait UseBreadcrumbs
 {
 
-    private ?Breadcrumbs $b = null;
+    private ?BreadcrumbTrail $trail = null;
     public $breadcrumbs = [];
 
     public function breadcrumbs()
     {
 
-        if (!$this->b) {
-            $this->b = new Breadcrumbs();
+        if (!$this->trail) {
+            $this->trail = new BreadcrumbTrail();
         }
 
-        $this->breadcrumbs = $this->b->get();
-
-        return $this->b;
+        return $this->trail;
 
     }
 

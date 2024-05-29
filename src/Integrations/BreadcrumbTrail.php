@@ -4,7 +4,7 @@ namespace OrbtUI\Integrations;
 
 use OrbtUI\Traits\UseProtection;
 
-class Breadcrumbs
+class BreadcrumbTrail
 {
 
     use UseProtection;

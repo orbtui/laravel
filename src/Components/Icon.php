@@ -20,6 +20,7 @@ class Icon extends OrbtUI
             ->add('uicons-' . $type)
             ->add('uicons-' . $name)
             ->add('text-' . $color)
+            ->add('p-0')
             ->protect(['uicons']);
 
         if ($size) {
