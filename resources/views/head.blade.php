@@ -15,6 +15,41 @@
 
     <link rel="shortcut icon" href="../dist/media/logos/favicon.ico" />
 
+    <style>
+        body::-webkit-scrollbar {
+            width: 5px;               /* width of the entire scrollbar */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #F1F1F4;        /* color of the tracking area */
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: #0066CC;        /* color of the tracking area */
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #0086FF;    /* color of the scroll thumb */
+            border: none;  /* creates padding around scroll thumb */
+        }
+        .overflow-y-auto::-webkit-scrollbar {
+            width: 5px;               /* width of the entire scrollbar */
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-track {
+            background: #F1F1F4;        /* color of the tracking area */
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+            background: #0066CC;        /* color of the tracking area */
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+            background-color: #0086FF;    /* color of the scroll thumb */
+            border: none;  /* creates padding around scroll thumb */
+        }
+        </style>
+
     <x-ui::styles />
 
     <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>

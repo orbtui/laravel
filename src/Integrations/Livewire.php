@@ -20,6 +20,22 @@ class Livewire
         return $this;
     }
 
+    public function ignore()
+    {
+        if (!$this->isProtected('wire:ignore') && !in_array('wire:ignore', $this->attributes)) {
+            array_push($this->attributes, 'wire:ignore');
+        }
+        return $this;
+    }
+
+    public function ignoreSelf()
+    {
+        if (!$this->isProtected('wire:ignore.self') && !in_array('wire:ignore.self', $this->attributes)) {
+            array_push($this->attributes, 'wire:ignore.self');
+        }
+        return $this;
+    }
+
     public function build()
     {
         return implode(' ', $this->attributes);

@@ -20,6 +20,14 @@ class Property
         return $this;
     }
 
+    public function type($value)
+    {
+        if (!$this->isProtected('type')) {
+            array_push($this->properties, 'type="' . $value . '"');
+        }
+        return $this;
+    }
+
     public function build()
     {
         return implode(' ', $this->properties);

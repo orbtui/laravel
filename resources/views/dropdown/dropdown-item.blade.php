@@ -1,3 +1,3 @@
 <div {!! $classAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!} >
-    {{ $slot }}
+    {{ $value }}
 </div>

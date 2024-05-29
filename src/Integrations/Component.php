@@ -11,7 +11,6 @@ class Component
     private string    $name = '';
     private string    $view = '';
     private array     $attributes = [];
-    private string    $content = '';
     private ?Component $child = null;
 
     public function __construct()
@@ -88,15 +87,14 @@ class Component
     {
         return $this->name;
     }
-
-    public function setView($view)
+    public function view($view = null)
     {
-        $this->view = $view;
-    }
 
-    public function view()
-    {
-        return ($this->view ? $this->view : $this->name);
+        if ($view) {
+            $this->view = $view;
+        }
+
+        return ($this->view ? 'ui::' . $this->view : $this->name);
     }
 
     public function attributes()

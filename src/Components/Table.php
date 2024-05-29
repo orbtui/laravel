@@ -10,6 +10,8 @@ class Table extends OrbtUI
     public function __construct(public bool $useCheckbox = false, bool $striped = false, bool $bordered = false, bool $hovered = false)
     {
 
+        $this->component()->view('datatables.table');
+
         $this->classes()->add('table');
 
         if ($striped) {

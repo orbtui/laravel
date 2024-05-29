@@ -8,7 +8,7 @@
 
         <div class="menu-item px-3">
             <div class="menu-content d-flex align-items-center fs-6 text-gray-900 fw-bold px-3 py-4">
-                <x-ui::button type="button" color="transparent" padding="0" margin="0" x-on:click="open = ! open">
+                <x-ui::button type="button" color="transparent" padding="0" margin="0" click="open = ! open">
                     <x-ui::icon type="solid" name="circle-ellipsis" color="primary" size="2" marginEnd="6" />
                 </x-ui::button>
                 {{ $title }}
@@ -17,7 +17,9 @@
 
         <x-ui::separator marginBottom="2" />
 
-        {{ $slot }}
+        <div class="overflow-y-auto mh-250px">
+            {{ $slot }}
+        </div>
 
     </div>
 

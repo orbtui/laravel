@@ -9,7 +9,7 @@ class TableSelectRow extends OrbtUI
 
     public function __construct(public string $value = '')
     {
-
+        $this->component()->view('datatables.table-select-row');
     }
 
 }

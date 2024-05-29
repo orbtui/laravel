@@ -10,6 +10,8 @@ class TableRowDropdown extends OrbtUI
     public function __construct(public string $title = '')
     {
 
+        $this->component()->view('datatables.table-row-dropdown');
+
         if ($title == '') {
             $title = trans('ui::components.actions');
         }

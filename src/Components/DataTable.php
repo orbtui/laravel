@@ -9,7 +9,7 @@ class DataTable extends OrbtUI
 
     public function __construct()
     {
-
+        $this->component()->view('datatables.data-table');
     }
 
 }
