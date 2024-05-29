@@ -52,9 +52,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
     private function bootComponents()
     {
-
         Blade::componentNamespace('\\OrbtUI\\Components', 'ui');
-
     }
 
 }

@@ -8,7 +8,7 @@ class Icon extends OrbtUI
 {
 
     public function __construct(
-        string $type = 'regular',
+        string $kind = 'regular',
         string $name = 'notdef',
         string $color = 'text-dark',
         string $size = '',
@@ -17,7 +17,7 @@ class Icon extends OrbtUI
     ) {
 
         $this->classes()
-            ->add('uicons-' . $type)
+            ->add('uicons-' . $kind)
             ->add('uicons-' . $name)
             ->add('text-' . $color)
             ->add('p-0')

@@ -67,14 +67,14 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                         <button type="button" class="btn btn-transparent text-gray-900 text-hover-primary fw-normal ps-2 pe-0" dusk="nextPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" wire:click="previousPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled">
                             <x-ui::icon type="regular" name="arrow-left" hoverColor="primary" />
                             @if ($backwardText)
-                                <span class="me-2">{{ $backwardText }}</span>
+                                <span class="me-2 ms-2">{{ $backwardText }}</span>
                             @endif
                         </button>
                     @else
                         <button type="button" class="btn btn-transparent text-muted fw-normal ps-2 pe-0" disabled>
                             <x-ui::icon type="regular" name="arrow-left" hoverColor="primary" />
                             @if ($backwardText)
-                                <span class="me-2">{{ $backwardText }}</span>
+                                <span class="me-2 ms-2">{{ $backwardText }}</span>
                             @endif
                         </button>
                     @endif

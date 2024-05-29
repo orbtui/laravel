@@ -5,7 +5,7 @@
     @endif
 
     @if($renderIcon)
-        <x-ui::icon type="light" name="add" marginStart="1" />
+        <x-ui::icon kind="light" :name="$renderIcon" marginStart="1" />
     @endif
 
 </button>

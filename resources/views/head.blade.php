@@ -48,6 +48,7 @@
             background-color: #0086FF;    /* color of the scroll thumb */
             border: none;  /* creates padding around scroll thumb */
         }
+
         </style>
 
     <x-ui::styles />
