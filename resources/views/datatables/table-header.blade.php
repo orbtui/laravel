@@ -1,3 +1,3 @@
-<th class="fw-bold">
+<th {!! $classAttributes !!} {!! $propertyAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     {{ $slot }}
 </th>

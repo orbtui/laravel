@@ -9,7 +9,11 @@ class TableHeader extends OrbtUI
 
     public function __construct()
     {
+
         $this->component()->view('datatables.table-header');
+
+        $this->classes()->add('fw-bold');
+
     }
 
 }
