@@ -13,6 +13,8 @@ class SidebarMenuLink extends OrbtUI
 
         $this->classes()->add('menu-link')->add('bg-hover-light');
 
+        $this->livewire()->protect(['wire:navigate']);
+
         if ($active) {
 
             $this->classes()->add('active');
@@ -27,10 +29,6 @@ class SidebarMenuLink extends OrbtUI
 
                 } catch (Exception $e) {
 
-                }
-
-                if ($navigate) {
-                    $this->livewire()->add('wire:navigate');
                 }
 
             }

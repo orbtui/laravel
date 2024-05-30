@@ -6,6 +6,8 @@
 
     <x-ui::body>
 
+        <x-ui::loading />
+
         <x-ui::root>
             <x-ui::page-container>
                 {{ $slot }}
