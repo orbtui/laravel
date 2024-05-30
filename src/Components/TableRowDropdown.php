@@ -12,7 +12,9 @@ class TableRowDropdown extends OrbtUI
 
         $this->component()->view('datatables.table-row-dropdown');
 
-        if ($title == '') {
+        if (strlen($title) > 25) {
+            $title = substr($title, 0, 25) . '...';
+        } else if ($title == '') {
             $title = trans('ui::components.actions');
         }
 
