@@ -2,6 +2,7 @@
 
 namespace OrbtUI\Components;
 
+use OrbtUI\Integrations\AlpineDirectives;
 use OrbtUI\OrbtUI;
 
 class Body extends OrbtUI
@@ -39,10 +40,10 @@ class Body extends OrbtUI
             ->add('data-kt-app-page-loading', 'on');
 
         $this->alpine()
-            ->add('x-data', '{ openSidebar: $persist(0), fixedFooter: $persist(0) }')
-            ->add('x-bind:data-kt-app-sidebar-minimize', 'openSidebar ? \'on\' : \'off\'')
-            ->add('x-bind:data-kt-app-footer-fixed', 'fixedFooter ? \'true\' : \'false\'')
-            ->add('x-bind:data-kt-app-footer-fixed-mobile', 'fixedFooter ? \'true\' : \'false\'');
+            ->data('{ openSidebar: $persist(0), fixedFooter: $persist(0) }')
+            ->bind('data-kt-app-sidebar-minimize', 'openSidebar ? \'on\' : \'off\'')
+            ->bind('data-kt-app-footer-fixed', 'fixedFooter ? \'true\' : \'false\'')
+            ->bind('data-kt-app-footer-fixed-mobile', 'fixedFooter ? \'true\' : \'false\'');
 
     }
 

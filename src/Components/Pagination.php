@@ -35,12 +35,12 @@ class Pagination extends OrbtUI
             ]);
 
         $this->alpine()
-            ->add('x-init', 'fixedFooter = true')
-            ->add('x-data', '{ showPagination: true }')
-            ->add('x-show', 'showPagination')
-            ->add('x-on:ui-hide-footer.window', 'showPagination = false')
-            ->add('x-on:ui-show-footer.window', 'showPagination = true; fixedFooter = true')
-            ->add('x-transition');
+            ->init('fixedFooter = true')
+            ->data('{ showPagination: true }')
+            ->show('showPagination')
+            ->on('ui-hide-footer.window', 'showPagination = false')
+            ->on('ui-show-footer.window', 'showPagination = true; fixedFooter = true')
+            ->transition();
 
     }
 

@@ -22,13 +22,13 @@ class TableActions extends OrbtUI
             ]);
 
             $this->alpine()
-                ->add('x-init', '$watch(\'items.length\', length => length > 0 ? $dispatch(\'ui-hide-footer\') : $dispatch(\'ui-show-footer\') )')
-                ->add('x-data', '{
+                ->init('$watch(\'items.length\', length => length > 0 ? $dispatch(\'ui-hide-footer\') : $dispatch(\'ui-show-footer\') )')
+                ->data('{
                         items: []
                     }')
-                ->add('x-on:ui-table-items-selected.camel.window', 'items = $event.detail.items; fixedFooter = true')
-                ->add('x-show', 'items.length > 0')
-                ->add('x-transition');
+                ->on('ui-table-items-selected.camel.window', 'items = $event.detail.items; fixedFooter = true')
+                ->show('items.length > 0')
+                ->transition();
 
     }
 

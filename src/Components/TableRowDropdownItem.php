@@ -18,6 +18,8 @@ class TableRowDropdownItem extends OrbtUI
             ->add('menu-item')
             ->add('px-3');
 
+        $this->alpine()->onClick('open = false');
+
     }
 
 }

@@ -4,7 +4,7 @@ namespace OrbtUI\Integrations;
 
 use OrbtUI\Traits\UseProtection;
 
-class Alpine
+class Alpine implements AlpineDirectives
 {
 
     use UseProtection;
@@ -12,108 +12,103 @@ class Alpine
     private $attributes = [];
     private $skipped    = [];
 
-    public function add($key, $value = null)
-    {
-        if (!$this->isProtected($key)) {
-            array_push($this->attributes, $value ? $key . '="' . $value . '"' : $key);
-        }
-
-        return $this;
-    }
-
     public function init($value = null)
     {
-        if (!$this->isProtected('x-init')) {
-            array_push($this->attributes, 'x-init="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::INIT, $value);
     }
 
     public function reference($value = null)
     {
-        if (!$this->isProtected('x-ref')) {
-            array_push($this->attributes, 'x-ref="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::REF, $value);
     }
 
     public function data($value = null)
     {
-        if (!$this->isProtected('x-data')) {
-            array_push($this->attributes, 'x-data="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::DATA, $value);
     }
 
     // Click Events
 
+    public function on($event, $value)
+    {
+        return $this->push(AlpineDirectives::ON . $event, $value);
+    }
+
     public function onClick($value = null)
     {
-        if (!$this->isProtected('x-on:click')) {
-            array_push($this->attributes, 'x-on:click="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::ON_CLICK, $value);
     }
 
     public function onClickAway($value = null)
     {
-        if (!$this->isProtected('x-on:click.away')) {
-            array_push($this->attributes, 'x-on:click.away="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::ON_CLICK_AWAY, $value);
     }
 
     public function onChange($value = null)
     {
-        if (!$this->isProtected('x-on:change')) {
-            array_push($this->attributes, 'x-on:change="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::ON_CHANGE, $value);
     }
 
     public function onChangeDebounce($value = null)
     {
-        if (!$this->isProtected('x-on:change.debounce')) {
-            array_push($this->attributes, 'x-on:change.debounce="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::ON_CHANGE_DEBOUNCE, $value);
     }
 
     public function show($value = null)
     {
-        if (!$this->isProtected('x-show')) {
-            array_push($this->attributes, 'x-show="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::SHOW, $value);
+    }
+
+    public function bind($directive, $value = null)
+    {
+        return $this->push(AlpineDirectives::BIND . $directive, $value);
     }
 
     public function class($value = null)
     {
-        if (!$this->isProtected('x-bind:class')) {
-            array_push($this->attributes, 'x-bind:class="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::BIND_CLASS, $value);
     }
 
     public function checked($value = null)
     {
-        if (!$this->isProtected('x-bind:checked')) {
-            array_push($this->attributes, 'x-bind:checked="' . $value . '"');
-        }
-        return $this;
+        return $this->push(AlpineDirectives::BIND_CHECKED, $value);
     }
 
     public function transition($value = null)
     {
-        if (!$this->isProtected('x-transition')) {
-            array_push($this->attributes, 'x-transition="' . $value . '"');
+        return $this->push(AlpineDirectives::TRANSITION, $value);
+    }
+
+    public function remove($directive)
+    {
+        array_slice($this->attributes, $directive);
+        return $this;
+    }
+
+    public function push($directive, $value)
+    {
+        if (!$this->isProtected($directive)) {
+            $this->attributes[$directive] = $this->has($directive) ? ('; ' . $value) : $value;
         }
         return $this;
     }
 
+    public function has($directive)
+    {
+        return array_key_exists($directive, $this->attributes);
+    }
+
     public function build()
     {
-        return implode(' ', $this->attributes);
+
+        $directives = [];
+
+        foreach ($this->attributes as $directive => $value) {
+           array_push($directives, $directive . '="' . $value . '"');
+        }
+
+        return implode(' ', $directives);
+
     }
 
 }

@@ -60,7 +60,7 @@ class OrbtUI extends Component
 
             // AlpineJS Attributes
 
-            case str_starts_with($key, 'x-') : $this->alpine()->add($key, $value); break;
+            case str_starts_with($key, 'x-') : $this->alpine()->push($key, $value); break;
             case $key == 'onChange'        && !is_array($value) : $this->alpine()->onChange($value); break;
             case $key == 'onClick'         && !is_array($value) : $this->alpine()->onClick($value); break;
             case $key == 'onClickAway'     && !is_array($value) : $this->alpine()->onClickAway($value); break;
