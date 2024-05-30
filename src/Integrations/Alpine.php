@@ -88,7 +88,7 @@ class Alpine implements AlpineDirectives
     public function push($directive, $value)
     {
         if (!$this->isProtected($directive)) {
-            $this->attributes[$directive] = $this->has($directive) ? ('; ' . $value) : $value;
+            $this->attributes[$directive] = $this->has($directive) ? ($this->attributes[$directive] . '; ' . $value) : $value;
         }
         return $this;
     }
