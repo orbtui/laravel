@@ -10,18 +10,17 @@ class Icon extends OrbtUI
     public function __construct(
         string $kind = 'regular',
         string $name = 'notdef',
-        string $color = 'text-dark',
-        string $size = '',
-        string $rotate = '',
-        string $animation = '',
+        ?string $color = null,
+        ?string $size = null,
+        ?string $rotate = null,
+        ?string $animation = null,
     ) {
 
         $this->classes()
             ->add('uicons-' . $kind)
             ->add('uicons-' . $name)
             ->add('text-' . $color)
-            ->add('p-0')
-            ->protect(['uicons']);
+            ->add('p-0');
 
         if ($size) {
             $this->classes()->add('fs-' . $size);
