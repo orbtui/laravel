@@ -43,7 +43,8 @@ class OrbtUI extends Component
                 'propertyAttributes' => $this->properties()->build(),
                 'styleAttributes' => $this->styles()->build(),
                 'alpineAttributes' => $this->alpine()->build(),
-                'livewireAttributes' => $this->livewire()->build()
+                'livewireAttributes' => $this->livewire()->build(),
+                'customCss' => $this->css()->build(),
             ]);
 
         };

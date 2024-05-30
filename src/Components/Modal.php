@@ -9,6 +9,7 @@ class Modal extends OrbtUI
 
     public function __construct(
         public ?string $open = null,
+        public string  $size = 'lg',
         public ?string $modalHeading = null,
         public ?string $modalLabel   = null,
         public ?string $primaryButtonText = null,
@@ -21,9 +22,10 @@ class Modal extends OrbtUI
 
         $this->component()->view('modals.modal');
 
-        $this->classes()->add('modal')->add('fade');
-
-        $this->styles()->add('background-color: rgba(22, 22, 22, 0.5)');
+        $this->classes()
+            ->add('modal')
+            ->add('fade')
+            ->add('shadow');
 
         $this->alpine()
             ->class($this->open . ' ? \'show d-block\' : \'\' ')

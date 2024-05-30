@@ -4,7 +4,7 @@ namespace OrbtUI\Components;
 
 use OrbtUI\OrbtUI;
 
-class Button extends OrbtUI
+class ButtonSkeleton extends OrbtUI
 {
 
     public function __construct(
@@ -16,7 +16,7 @@ class Button extends OrbtUI
         public ?string $onClick         = null
     ) {
 
-        $this->classes()->add('btn')->add('btn-' . $this->kind)->add('btn-' . $this->size);
+        $this->classes()->add('btn placeholder animate-pulse bg-gray-300')->add('btn-' . $this->kind)->add('btn-' . $this->size);
 
         if ($this->hasIconOnly) {
             $this->classes()->add('btn-flex')->add('py-3 px-3');
@@ -26,7 +26,7 @@ class Button extends OrbtUI
             $this->alpine()->onClick($this->onClick);
         }
 
-        $this->component()->view('buttons.button');
+        $this->component()->view('buttons.button-skeleton');
 
     }
 

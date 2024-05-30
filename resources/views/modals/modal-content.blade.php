@@ -1,3 +1,3 @@
-    <div class="modal-content">
-        {{ $slot }}
-    </div>
+<div {!! $classAttributes !!} {!! $propertyAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
+    {{ $slot }}
+</div>

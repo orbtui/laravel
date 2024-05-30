@@ -13,6 +13,8 @@ class ModalContent extends OrbtUI
 
         $this->component()->view('modals.modal-content');
 
+        $this->classes()->add('modal-content');
+
     }
 
 }

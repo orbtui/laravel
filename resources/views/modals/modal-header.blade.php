@@ -1,12 +1,16 @@
-<div class="modal-header d-block">
+<div {!! $classAttributes !!} {!! $propertyAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
 <div class="row">
     <div class="col-md-10">
         @if ($modalLabel)
-            <h2 class="fs-6 fw-normal mb-1">{{ $modalLabel }}</h2>
+            <x-ui::text kind="heading" size="6" weight="normal">
+                {{ $modalLabel }}
+            </x-ui::text>
         @endif
 
         @if ($modalHeading)
-            <h3 class="fw-normal fs-1">{{ $modalHeading }}</h3>
+            <x-ui::text kind="heading" weight="normal">
+                {{ $modalHeading }}
+            </x-ui::text>
         @endif
     </div>
     <div class="col-md-2 text-end">

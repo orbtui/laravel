@@ -20,7 +20,7 @@ class Body extends OrbtUI
             ->add('data-kt-app-header-fixed-mobile', 'true')
             ->add('data-kt-app-sidebar-enabled', 'true')
             ->add('data-kt-app-sidebar-fixed', 'true')
-            ->add('data-kt-app-sidebar-hoverable', 'false')
+            ->add('data-kt-app-sidebar-hoverable', 'true')
             ->add('data-kt-app-sidebar-push-header', 'true')
             ->add('data-kt-app-sidebar-push-toolbar', 'true')
             ->add('data-kt-app-sidebar-push-footer', 'true')

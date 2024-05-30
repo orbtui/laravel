@@ -13,6 +13,9 @@ class ModalBody extends OrbtUI
 
         $this->component()->view('modals.modal-body');
 
+        $this->classes()
+            ->add('modal-body');
+
     }
 
 }

@@ -1,5 +1,5 @@
 <div {!! $classAttributes !!} {!! $propertyAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
-    <x-ui::modal-dialog>
+    <x-ui::modal-dialog :size="$size">
         <x-ui::modal-content>
 
             <x-ui::modal-header :modalHeading="$modalHeading" :modalLabel="$modalLabel" :open="$open" />
@@ -13,3 +13,4 @@
         </x-ui::modal-content>
     </x-ui::modal-dialog>
 </div>
+<x-ui::backdrop :showBackdrop="$open" />

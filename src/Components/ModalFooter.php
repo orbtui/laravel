@@ -19,7 +19,9 @@ class ModalFooter extends OrbtUI
 
         $this->component()->view('modals.modal-footer');
 
-        $this->classes()->add('modal-footer');
+        $this->classes()
+            ->add('modal-footer')
+            ->add('border-0');
 
     }
 

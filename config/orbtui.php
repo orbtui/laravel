@@ -2,11 +2,20 @@
 
 return [
 
-    'style' => 1,
+    'default_kinds' => [
+        'buttons' => 'primary',
+        'icons'   => 'regular'
+    ],
 
-    'colors' => [
+    'defaut_sizes' => [
+        'modals'  => 'xl',
+        'buttons' => 'sm',
+        'texts'    => '6',
+        'icons'   => '6'
+    ],
 
-        //'primary'        => '#0086FF',
+    'default_colors' => [
+
         'primary'        => 'red',
         'secondary'      => 'yellow',
 

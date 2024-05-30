@@ -29,6 +29,14 @@ class Alpine
         return $this;
     }
 
+    public function reference($value = null)
+    {
+        if (!$this->isProtected('x-ref')) {
+            array_push($this->attributes, 'x-ref="' . $value . '"');
+        }
+        return $this;
+    }
+
     public function data($value = null)
     {
         if (!$this->isProtected('x-data')) {

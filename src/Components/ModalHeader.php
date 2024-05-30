@@ -15,6 +15,10 @@ class ModalHeader extends OrbtUI
 
         $this->component()->view('modals.modal-header');
 
+        $this->classes()
+            ->add('modal-header')
+            ->add('d-block');
+
     }
 
 }

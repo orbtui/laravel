@@ -21,33 +21,43 @@ class Css
     public function build()
     {
 
-        foreach ($this->classes as $className => $color) {
+        // foreach ($this->classes as $className => $color) {
 
-            // Text Classes
+        //     // Button Classes
 
-            $this->css .= '.text-' . $className . ' { ';
-            $this->css .= 'color: ' . $color . ' !important; ';
-            $this->css .= ' } ';
+        //     $this->css .= '.btn-' . $className . ' { ';
+        //     $this->css .= 'background-color: ' . $color . ' !important; ';
+        //     $this->css .= ' } ';
 
-            $this->css .= '.text-hover-' . $className . ':hover { ';
-            $this->css .= 'color: ' . $color . ' !important; ';
-            $this->css .= '} ';
+        //     $this->css .= '.btn-' . $className . ':hover { ';
+        //         $this->css .= 'background-color: ' . $color . ' !important; ';
+        //         $this->css .= ' } ';
 
-            $this->css .= '.text-active-' . $className . '.active { ';
-            $this->css .= 'color: ' . $color . ' !important; ';
-            $this->css .= ' } ';
+        //     // Text Classes
 
-            // Background Classes
+        //     $this->css .= '.text-' . $className . ' { ';
+        //     $this->css .= 'color: ' . $color . ' !important; ';
+        //     $this->css .= ' } ';
 
-            $this->css .= '.bg-' . $className . ' { ';
-            $this->css .= 'color: ' . $color . ' !important; ';
-            $this->css .= ' } ';
+        //     $this->css .= '.text-hover-' . $className . ':hover { ';
+        //     $this->css .= 'color: ' . $color . ' !important; ';
+        //     $this->css .= '} ';
 
-            if ($className == 'primary') {
-                $this->setTabStyles($color);
-            }
+        //     $this->css .= '.text-active-' . $className . '.active { ';
+        //     $this->css .= 'color: ' . $color . ' !important; ';
+        //     $this->css .= ' } ';
 
-        }
+        //     // Background Classes
+
+        //     $this->css .= '.bg-' . $className . ' { ';
+        //     $this->css .= 'color: ' . $color . ' !important; ';
+        //     $this->css .= ' } ';
+
+        //     if ($className == 'primary') {
+        //         $this->setTabStyles($color);
+        //     }
+
+        // }
 
         return $this->css;
 

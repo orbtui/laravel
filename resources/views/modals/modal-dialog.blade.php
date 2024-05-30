@@ -1,3 +1,3 @@
-<div class="modal-dialog modal-xl modal-dialog-centered">
+<div {!! $classAttributes !!} {!! $propertyAttributes !!} {!! $alpineAttributes !!} {!! $livewireAttributes !!} {!! $styleAttributes !!}>
     {{ $slot }}
 </div>
