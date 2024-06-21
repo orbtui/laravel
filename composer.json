@@ -1,6 +1,6 @@
 {
     "name": "orbtui/laravel",
-    "description": "Fluid user interface, easy to use and integrated with Livewire.",
+    "description": "Fluid user interface, easy to use and integrated with AlpineJS.",
     "type": "laravel-package",
     "authors": [
         {
@@ -11,7 +11,6 @@
     "keywords": [
         "ui",
         "user interface",
-        "livewire",
         "alpine",
         "components"
     ],
@@ -19,7 +18,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "livewire/livewire": "^3.5"
+        "livewire/livewire" : "^3.0"
     },
     "autoload": {
       "psr-4": {
@@ -35,7 +34,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "OrbtUI\\Providers\\OrbtUIServiceProvider"
+            "OrbtUI\\OrbtUIServiceProvider"
           ]
         }
     },

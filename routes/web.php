@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use OrbtUI\Mechanisms\FrontendAssets;
+use OrbtUI\Mechanisms\FrontendAssets\FrontendAssets;
 
 /*
 |--------------------------------------------------------------------------
