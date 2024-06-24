@@ -4,7 +4,7 @@ namespace OrbtUI\Components\Grid;
 
 use OrbtUI\OrbtUI;
 
-class Row extends OrbtUI
+class Grid extends OrbtUI
 {
 
     public function __construct()

@@ -21,9 +21,6 @@ class Page extends OrbtUI
 
         $root = new Component('div');
 
-        $root->properties()
-            ->add('id', 'kt_app_root');
-
         $root->classes()
             ->add('d-flex')
             ->add('flex-column')

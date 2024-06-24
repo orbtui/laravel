@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI;
+namespace OrbtUI\Features;
 
 use OrbtUI\Features\SupportSearch\SupportSearch;
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 use OrbtUI\Components\Grid\ {
-    Row,
+    Grid,
     Column
 };
 
@@ -16,6 +16,14 @@ use OrbtUI\Components\Layout\ {
 
 use OrbtUI\Components\Header\ {
     Header
+};
+
+use OrbtUI\Components\Page\ {
+    Page
+};
+
+use OrbtUI\Components\Form\ {
+    Form
 };
 
 class OrbtUIServiceProvider extends ServiceProvider {
@@ -76,7 +84,16 @@ class OrbtUIServiceProvider extends ServiceProvider {
     protected function bootComponents()
     {
 
-        Blade::componentNamespace('OrbtUI\Components');
+        Blade::component('layout', Layout::class);
+
+        Blade::component('grid', Grid::class);
+        Blade::component('column', Column::class);
+
+        Blade::component('header', Header::class);
+
+        Blade::component('page', Page::class);
+
+        Blade::component('form', Form::class);
 
     }
 
