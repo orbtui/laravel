@@ -29,7 +29,7 @@ class Component
         return $this;
     }
 
-    public function append(Component $child)
+    public function append($child)
     {
         array_push($this->childs, $child);
     }
@@ -37,11 +37,6 @@ class Component
     public function childs()
     {
         return $this->childs;
-    }
-
-    public function hasSlot()
-    {
-        return $this->hasSlot;
     }
 
     public function build()
@@ -57,10 +52,18 @@ class Component
 
         foreach ($this->childs() as $child) {
 
-            if ($child->tag === 'slot') {
-                $content .= '{{ $slot }}';
+            if ($child instanceof Component) {
+
+                if ($child->tag === 'slot') {
+                    $content .= '{{ $slot }}';
+                } else {
+                    $content .= $child->build();
+                }
+
             } else {
-                $content .= $child->build();
+
+                $content .= $child;
+
             }
 
         }

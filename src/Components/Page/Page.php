@@ -8,8 +8,9 @@ use OrbtUI\OrbtUI;
 class Page extends OrbtUI
 {
 
-    public function __construct()
-    {
+    public function __construct(
+        public bool $blank = false
+    ) {
 
         $this->component()->tag('div');
 

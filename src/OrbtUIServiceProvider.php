@@ -18,8 +18,18 @@ use OrbtUI\Components\Header\ {
     Header
 };
 
+use OrbtUI\Components\Sidebar\ {
+    Sidebar,
+    SidebarMenu,
+    SidebarMenuItem,
+    SidebarMenuGroup,
+    SidebarFooter
+};
+
 use OrbtUI\Components\Page\ {
-    Page
+    Page,
+    PageToolbar,
+    PageContent
 };
 
 use OrbtUI\Components\Form\ {
@@ -91,7 +101,15 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         Blade::component('header', Header::class);
 
-        Blade::component('page', Page::class);
+        Blade::component('sidebar', Sidebar::class);
+        Blade::component('sidebar-menu', SidebarMenu::class);
+        Blade::component('sidebar-menu-item', SidebarMenuItem::class);
+        Blade::component('sidebar-menu-group', SidebarMenuGroup::class);
+        Blade::component('sidebar-footer', SidebarFooter::class);
+
+        Blade::component('page',         Page::class);
+        Blade::component('page-toolbar', PageToolbar::class);
+        Blade::component('page-content', PageContent::class);
 
         Blade::component('form', Form::class);
 
