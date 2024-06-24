@@ -43,6 +43,10 @@ use OrbtUI\Components\Form\ {
     Form
 };
 
+use OrbtUI\Components\Button\ {
+    Button
+};
+
 class OrbtUIServiceProvider extends ServiceProvider {
 
     /**
@@ -133,7 +137,11 @@ class OrbtUIServiceProvider extends ServiceProvider {
         Blade::component('table-row',    TableRow::class);
         Blade::component('table-cell',   TableCell::class);
 
+        // Forms & Buttons
+
         Blade::component('form', Form::class);
+
+        Blade::component('button', Button::class);
 
     }
 

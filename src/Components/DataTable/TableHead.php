@@ -3,10 +3,10 @@
 namespace OrbtUI\Components\DataTable;
 
 use OrbtUI\Features\SupportAlpine\Alpine;
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class TableHead extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class TableHead extends Component
 {
 
     public function __construct(
@@ -16,13 +16,13 @@ class TableHead extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('thead');
+        $this->tag('thead');
 
-        $this->component()
+        $this
             ->classes()
                 ->add('bg-gray-300');
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

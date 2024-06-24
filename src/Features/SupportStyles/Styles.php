@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Features\SupportClasses;
+namespace OrbtUI\Features\SupportStyles;
 
 use OrbtUI\Features\SupportAttributes\SupportAttributes;
 use OrbtUI\Features\SupportProtection\SupportProtection;

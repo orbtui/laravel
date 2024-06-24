@@ -2,24 +2,35 @@
 
 namespace OrbtUI\Components\Sidebar;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Sidebar extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Sidebar extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
-            ->classes()
-                ->add('app-sidebar')
-                ->add('flex-column')
-                ->add('bg-light');
+        $this->classes()->push([
+            'app-sidebar',
+            'flex-column',
+            'bg-light'
+        ]);
 
-        $this->component()->child(new Component());
+        $this->properties()->push([
+            'id' => 'kt_app_sidebar',
+            'data-kt-drawer' => 'true',
+            'data-kt-drawer-name' => 'app-sidebar',
+            'data-kt-drawer-activate' => `{default: true, lg: false}`,
+            'data-kt-drawer-overlay' => 'true',
+            'data-kt-drawer-width' => '225px',
+            'data-kt-drawer-direction' => 'start',
+            'data-kt-drawer-toggle' => '#kt_app_sidebar_mobile_toggle'
+        ]);
+
+        $this->parentOf(new Component());
 
     }
 

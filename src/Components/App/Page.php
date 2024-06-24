@@ -2,10 +2,10 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Page extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Page extends Component
 {
 
     public function __construct(
@@ -15,26 +15,31 @@ class Page extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
-            ->classes()
-                ->add('app-main')
-                ->add('flex-column')
-                ->add('flex-row-fluid');
+        $this->classes()->push([
+            'app-main',
+            'flex-column',
+            'flex-row-fluid'
+        ]);
+
+        $this->properties()->push([
+            'id' => 'kt_app_main'
+        ]);
 
         $root = new Component('div');
 
-        $root->classes()
-            ->add('d-flex')
-            ->add('flex-column')
-            ->add('flex-column-fluid')
-            ->add('mb-20')
-            ->add('mb-md-2');
+        $root->classes()->push([
+            'd-flex',
+            'flex-column',
+            'flex-column-fluid',
+            'mb-20',
+            'mb-md-2'
+        ]);
 
-        $root->child(new Component());
+        $root->parentOf(new Component());
 
-        $this->component()->child($root);
+        $this->parentOf($root);
 
     }
 

@@ -2,41 +2,47 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Header extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Header extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()->properties()
-                ->add('id', 'kt_app_header')
-                ->add('data-kt-sticky', 'true')
-                ->add('data-kt-sticky-activate', '{default: true, lg: true}')
-                ->add('data-kt-sticky-name', 'app-header-minimize')
-                ->add('data-kt-sticky-offset', `{default: '200px', lg: '0'}`)
-                ->add('data-kt-sticky-animation', 'true');
+        $this->properties()->push([
+            'id'                       => 'kt_app_header',
+            'data-kt-sticky'           => 'true',
+            'data-kt-sticky-activate'  => `{default: true, lg: true}`,
+            'data-kt-sticky-name'      => 'app-header-minimize',
+            'data-kt-sticky-offset'    => `{default: '200px', lg: '0'}`,
+            'data-kt-sticky-animation' => 'true'
+        ]);
 
-        $this->component()
-             ->classes()
-                ->add('app-header');
+        $this->classes()->push([
+            'app-header'
+        ]);
 
         $container = new Component('div');
 
-        $container->classes()
-            ->add('app-container')
-            ->add('container-fluid')
-            ->add('d-flex')
-            ->add('align-items-stretch')
-            ->add('justify-content-between');
+        $container->properties()->push([
+            'id' => 'kt_app_header_container'
+        ]);
 
-        $container->child(new Component('slot'));
+        $container->classes()->push([
+            'app-container',
+            'container-fluid',
+            'd-flex',
+            'align-items-stretch',
+            'justify-content-between',
+        ]);
 
-        $this->component()->child($container);
+        $container->parentOf(new Component('slot'));
+
+        $this->parentOf($container);
 
     }
 

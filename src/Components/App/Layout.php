@@ -2,23 +2,24 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Layout extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Layout extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()->classes()
-                ->add('app-wrapper')
-                ->add('flex-column')
-                ->add('flex-row-fluid');
+        $this->classes()->push([
+            'app-wrapper',
+            'flex-column',
+            'flex-row-fluid',
+        ]);
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

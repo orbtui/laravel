@@ -2,10 +2,10 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Toolbar extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Toolbar extends Component
 {
 
     public function __construct(
@@ -15,48 +15,92 @@ class Toolbar extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
+        $this
              ->classes()
                 ->add('app-toolbar')
                 ->add('py-3')
                 ->add('py-lg-6');
 
+        $container = $this->createContainer();
+
+        $heading = $this->createHeading();
+
+        $actions = $this->createActions();
+
+        $container->parentOf($heading);
+        $container->parentOf($actions);
+
+        $this->parentOf($container);
+
+    }
+
+    private function createContainer()
+    {
         $container = new Component('div');
 
-        $container->classes()
-                    ->add('app-container')
-                    ->add('container-fluid')
-                    ->add('d-flex')
-                    ->add('flex-stack');
+        $container->classes()->push([
+            'app-container',
+            'container-fluid',
+            'd-flex',
+            'flex-stack'
+        ]);
+
+        return $container;
+
+    }
+
+    private function createHeading()
+    {
 
         $pageTitle = new Component('div');
 
-        $pageTitle->classes()
-                    ->add('page-heading')
-                    ->add('flex-column')
-                    ->add('justify-content-center')
-                    ->add('flex-wrap')
-                    ->add('me-3');
+        $pageTitle->classes()->push([
+            'page-title',
+            'd-flex',
+            'flex-column',
+            'justify-content-center',
+            'flex-wrap',
+            'me-3',
+        ]);
 
         $pageHeading = new Component('div');
 
-        $pageHeading->classes()
-                    ->add('page-heading')
-                    ->add('d-flex')
-                    ->add('text-gray-900')
-                    ->add('fw-bold')
-                    ->add('fs-3')
-                    ->add('flex-column')
-                    ->add('justify-content-center')
-                    ->add('my-0');
+        $pageHeading->classes()->push([
+            'page-heading',
+            'd-flex',
+            'text-gray-900',
+            'fw-bold',
+            'fs-3',
+            'flex-column',
+            'justify-content-center',
+            'my-0',
+        ]);
 
-        $pageHeading->child($this->title);
+        $pageHeading->parentOf($this->title);
 
-        $pageTitle->child($pageHeading);
+        $pageTitle->parentOf($pageHeading);
 
-        $this->component()->child($pageTitle);
+        return $pageTitle;
+
+    }
+
+    private function createActions()
+    {
+
+        $actions = new Component('div');
+
+        $actions->classes()->push([
+            'd-flex',
+            'align-items-center',
+            'gap-2',
+            'gap-lg-3',
+        ]);
+
+        $actions->parentOf(new Component());
+
+        return $actions;
 
     }
 

@@ -3,10 +3,10 @@
 namespace OrbtUI\Components\DataTable;
 
 use OrbtUI\Features\SupportAlpine\Alpine;
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class TableCell extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class TableCell extends Component
 {
 
     public function __construct(
@@ -16,9 +16,9 @@ class TableCell extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('td');
+        $this->tag('td');
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

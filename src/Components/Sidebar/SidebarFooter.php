@@ -2,16 +2,16 @@
 
 namespace OrbtUI\Components\Sidebar;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class SidebarFooter extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class SidebarFooter extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
     }
 

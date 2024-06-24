@@ -3,10 +3,10 @@
 namespace OrbtUI\Components\DataTable;
 
 use OrbtUI\Features\SupportAlpine\Alpine;
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class DataTable extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class DataTable extends Component
 {
 
     public function __construct(
@@ -16,14 +16,14 @@ class DataTable extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
+        $this
             ->classes()
                 ->add('table-responsive')
                 ->add('shadow-sm');
 
-        $this->component()
+        $this
             ->alpine()
                 ->add(Alpine::DATA, `{ items: [],
                     getItems(){
@@ -38,7 +38,7 @@ class DataTable extends OrbtUI
                     }
                 }`);
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

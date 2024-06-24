@@ -2,10 +2,10 @@
 
 namespace OrbtUI\Components\Grid;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Column extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Column extends Component
 {
 
     public function __construct(
@@ -17,15 +17,15 @@ class Column extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
         if (!$this->sm && !$this->md && !$this->lg) {
-            $this->component()
+            $this
                 ->classes()
                     ->add('col');
         }
 
-        $this->component()->append(new Component());
+        $this->append(new Component());
 
     }
 

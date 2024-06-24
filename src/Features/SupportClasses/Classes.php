@@ -16,6 +16,16 @@ class Classes
         return $this;
     }
 
+    public function push(array $classes)
+    {
+
+        foreach ($classes as $key => $value) {
+            $this->attributes()->add($value, $value);
+        }
+
+        return $this;
+    }
+
     public function empty()
     {
         return empty($this->attributes()->all());
@@ -26,8 +36,8 @@ class Classes
 
         $classes = [];
 
-        foreach ($this->attributes()->all() as $attribute => $value) {
-            array_push($classes, $attribute);
+        foreach ($this->attributes()->all() as $key => $value) {
+            array_push($classes, $key);
         }
 
         return $classes;

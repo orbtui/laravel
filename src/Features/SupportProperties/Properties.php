@@ -16,6 +16,12 @@ class Properties
         return $this;
     }
 
+    public function push(array $properties)
+    {
+        $this->attributes()->push($properties);
+        return $this;
+    }
+
     public function empty()
     {
         return empty($this->attributes()->all());

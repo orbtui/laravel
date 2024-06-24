@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Features\SupportClasses;
+namespace OrbtUI\Features\SupportStyles;
 
 trait SupportStyles
 {

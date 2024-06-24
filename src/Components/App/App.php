@@ -2,56 +2,62 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
+use OrbtUI\OrbtUI as Component;
 
-class App extends OrbtUI
+class App extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('body');
+        $this->tag('body');
 
-        $this->component()->classes()->add('app-default');
+        $this->classes()->push([
+            'app-default'
+        ]);
 
-        $this->component()->properties()
-                ->add('data-kt-app-layout',               'light-sidebar')
-                ->add('data-kt-app-header-fixed',         'true')
-                ->add('data-kt-app-sidebar-enabled',      'true')
-                ->add('data-kt-app-sidebar-fixed',        'true')
-                ->add('data-kt-app-sidebar-hoverable',    'true')
-                ->add('data-kt-app-sidebar-push-header',  'true')
-                ->add('data-kt-app-sidebar-push-toolbar', 'true')
-                ->add('data-kt-app-sidebar-push-footer',  'true')
-                ->add('data-kt-app-toolbar-enabled',      'true');
+        $this->properties()->push([
+            'data-kt-app-layout'               => 'light-sidebar',
+            'data-kt-app-header-fixed'         => 'true',
+            'data-kt-app-sidebar-enabled'      => 'true',
+            'data-kt-app-sidebar-fixed'        => 'true',
+            'data-kt-app-sidebar-hoverable'    => 'true',
+            'data-kt-app-sidebar-push-header'  => 'true',
+            'data-kt-app-sidebar-push-toolbar' => 'true',
+            'data-kt-app-sidebar-push-footer'  => 'true',
+            'data-kt-app-toolbar-enabled'      => 'true'
+        ]);
 
         $root = new Component('div');
 
-        $root->properties()
-            ->add('id', 'kt_app_root');
+        $root->properties()->push([
+            'id' => 'kt_app_root'
+        ]);
 
-        $root->classes()
-            ->add('d-flex')
-            ->add('flex-column')
-            ->add('flex-root')
-            ->add('app-root');
+        $root->classes()->push([
+            'd-flex',
+            'flex-column',
+            'flex-root',
+            'app-root',
+        ]);
 
         $page = new Component('div');
 
-        $page->properties()
-            ->add('id', 'kt_app_page');
+        $page->properties()->push([
+            'id' => 'kt_app_page'
+        ]);
 
-        $page->classes()
-            ->add('app-page')
-            ->add('flex-column')
-            ->add('flex-column-fluid');
+        $page->classes()->push([
+            'app-page',
+            'flex-column',
+            'flex-column-fluid'
+        ]);
 
-        $page->child(new Component());
+        $page->parentOf(new Component());
 
-        $root->child($page);
+        $root->parentOf($page);
 
-        $this->component()->child($root);
+        $this->parentOf($root);
 
     }
 

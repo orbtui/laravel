@@ -2,52 +2,83 @@
 
 namespace OrbtUI\Components\Sidebar;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class SidebarMenu extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class SidebarMenu extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
-            ->classes()
-                ->add('app-sidebar-menu')
-                ->add('overflow-hidden')
-                ->add('flex-column-fluid');
+        $this->classes()->push([
+            'app-sidebar-menu',
+            'overflow-hidden',
+            'flex-column-fluid'
+        ]);
+
+        $wrapper = $this->createWrapper();
+
+        $this->parentOf($wrapper);
+
+    }
+
+    private function createWrapper()
+    {
 
         $wrapper = new Component('div');
 
-        $wrapper->classes()
-            ->add('app-sidebar-wrapper');
+        $wrapper->classes()->push([
+            'app-sidebar-wrapper'
+        ]);
+
+        $wrapper->properties()->push([
+            'id' => 'kt_app_sidebar_menu_wrapper'
+        ]);
 
         $scroll = new Component('div');
 
-        $scroll->classes()
-            ->add('scroll-y')
-            ->add('my-5')
-            ->add('mx-3');
+        $scroll->classes()->push([
+            'scroll-y',
+            'my-5 mx-3',
+            'mx-3',
+        ]);
+
+        $scroll->properties()->push([
+            'data-kt-scroll' => 'true',
+            'data-kt-scroll-activate' => 'true',
+            ' data-kt-scroll-height' => 'auto',
+            'data-kt-scroll-dependencies' => '#kt_app_sidebar_logo, #kt_app_sidebar_footer',
+            'data-kt-scroll-wrappers' => '#kt_app_sidebar_menu',
+            'data-kt-scroll-offset' => '5px',
+            'data-kt-scroll-save-state' => 'true'
+        ]);
 
         $menu = new Component('div');
 
-        $menu->classes()
-            ->add('menu')
-            ->add('menu-column')
-            ->add('menu-rounded')
-            ->add('menu-sub-indention')
-            ->add('fw-semibold')
-            ->add('fs-6');
+        $menu->classes()->push([
+            'menu',
+            'menu-column',
+            'menu-rounded',
+            'menu-sub-indention',
+            'fw-semibold',
+            'fs-6',
+        ]);
 
-        $menu->child(new Component());
+        $menu->properties()->push([
+            'data-kt-menu' => 'true',
+            'data-kt-menu-expand' => 'false',
+        ]);
 
-        $scroll->child($menu);
+        $menu->parentOf(new Component());
 
-        $wrapper->child($scroll);
+        $scroll->parentOf($menu);
 
-        $this->component()->child($wrapper);
+        $wrapper->parentOf($scroll);
+
+        return $wrapper;
 
     }
 

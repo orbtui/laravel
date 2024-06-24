@@ -2,18 +2,18 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Scripts extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Scripts extends Component
 {
 
     public function mount()
     {
 
-        $this->component()->tag('script');
+        $this->tag('script');
 
-        $this->component()
+        $this
              ->properties()
                 ->add('type', 'text/javascript')
                 ->add('src', '/orbtui/js/scripts.bundle.js');
@@ -24,7 +24,7 @@ class Scripts extends OrbtUI
             ->add('type', 'text/javascript')
             ->add('src', '/orbtui/js/plugins.bundle.js');
 
-        $this->component()->append($plugins);
+        $this->append($plugins);
 
     }
 

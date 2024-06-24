@@ -2,18 +2,18 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Styles extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Styles extends Component
 {
 
     public function mount()
     {
 
-        $this->component()->tag('link');
+        $this->tag('link');
 
-        $this->component()
+        $this
              ->properties()
                 ->add('href', '/orbtui/css/style.bundle.css')
                 ->add('type', 'text/css')
@@ -26,7 +26,7 @@ class Styles extends OrbtUI
                 ->add('rel', 'stylesheet')
                 ->add('type', 'text/css');
 
-        $this->component()->append($plugins);
+        $this->append($plugins);
 
     }
 

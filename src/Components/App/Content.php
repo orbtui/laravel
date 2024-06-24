@@ -2,10 +2,10 @@
 
 namespace OrbtUI\Components\App;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Content extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Content extends Component
 {
 
     public function __construct(
@@ -15,37 +15,38 @@ class Content extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
         if ($this->blank) {
 
-            $this->component()
-                ->classes()
-                    ->add('d-flex')
-                    ->add('flex-center')
-                    ->add('flex-column')
-                    ->add('flex-column-fluid')
-                    ->add('pb-15')
-                    ->add('pb-lg-20');
+            $this->classes()->push([
+                'd-flex',
+                'flex-center',
+                'flex-column',
+                'flex-column-fluid',
+                'pb-15',
+                'pb-lg-20',
+            ]);
 
-            $this->component()->child(new Component());
+            $this->parentOf(new Component());
 
         } else {
 
-            $this->component()
-                    ->classes()
-                        ->add('app-content')
-                        ->add('flex-column-fluid');
+            $this->classes()->push([
+                'app-content',
+                'flex-column-fluid'
+            ]);
 
             $container = new Component('div');
 
-            $container->classes()
-                        ->add('app-container')
-                        ->add('container-fluid');
+            $container->classes()->push([
+                'app-container',
+                'container-fluid'
+            ]);
 
-            $container->child(new Component());
+            $container->parentOf(new Component());
 
-            $this->component()->child($container);
+            $this->parentOf($container);
 
         }
 

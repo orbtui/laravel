@@ -3,10 +3,10 @@
 namespace OrbtUI\Components\DataTable;
 
 use OrbtUI\Features\SupportAlpine\Alpine;
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Table extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Table extends Component
 {
 
     public function __construct(
@@ -16,9 +16,9 @@ class Table extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('table');
+        $this->tag('table');
 
-        $this->component()
+        $this
             ->classes()
                 ->add('table')
                 ->add('table-striped')
@@ -28,7 +28,7 @@ class Table extends OrbtUI
                 ->add('gs-7')
                 ->add('mb-0');
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

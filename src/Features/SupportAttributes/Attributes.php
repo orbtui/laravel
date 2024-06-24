@@ -13,6 +13,12 @@ class Attributes
         return $this;
     }
 
+    public function push(array $attributes = [])
+    {
+        $this->attributes = array_merge($this->attributes, $attributes);
+        return $this;
+    }
+
     public function remove($attribute)
     {
         array_slice($this->attributes, $attribute);

@@ -3,10 +3,10 @@
 namespace OrbtUI\Components\DataTable;
 
 use OrbtUI\Features\SupportAlpine\Alpine;
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class TableRow extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class TableRow extends Component
 {
 
     public function __construct(
@@ -16,9 +16,9 @@ class TableRow extends OrbtUI
     protected function mount()
     {
 
-        $this->component()->tag('tr');
+        $this->tag('tr');
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 

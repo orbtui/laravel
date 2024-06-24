@@ -2,17 +2,17 @@
 
 namespace OrbtUI\Components\Grid;
 
-use OrbtUI\OrbtUI;
+use OrbtUI\OrbtUI as Component;
 
-class Grid extends OrbtUI
+class Grid extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('div');
+        $this->tag('div');
 
-        $this->component()
+        $this
             ->classes()
                 ->add('row');
 

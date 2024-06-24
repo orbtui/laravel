@@ -2,18 +2,18 @@
 
 namespace OrbtUI\Components\Form;
 
-use OrbtUI\Features\SupportComponents\Component;
-use OrbtUI\OrbtUI;
 
-class Form extends OrbtUI
+use OrbtUI\OrbtUI as Component;
+
+class Form extends Component
 {
 
     protected function mount()
     {
 
-        $this->component()->tag('form');
+        $this->tag('form');
 
-        $this->component()->child(new Component());
+        $this->parentOf(new Component());
 
     }
 
