@@ -76,12 +76,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
     protected function bootComponents()
     {
 
-        Blade::component('layout', Layout::class);
-
-        Blade::component('row', Row::class);
-        Blade::component('column', Column::class);
-
-        Blade::component('header', Header::class);
+        Blade::componentNamespace('OrbtUI\Components');
 
     }
 
