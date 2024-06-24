@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Mechanisms\FrontendAssets;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;
@@ -15,12 +15,14 @@ class Scripts extends OrbtUI
 
         $this->component()
              ->properties()
+                ->add('type', 'text/javascript')
                 ->add('src', '/orbtui/js/scripts.bundle.js');
 
         $plugins = new Component('script');
 
         $plugins->properties()
-                ->add('src', '/orbtui/js/plugins.bundle.js');
+            ->add('type', 'text/javascript')
+            ->add('src', '/orbtui/js/plugins.bundle.js');
 
         $this->component()->append($plugins);
 

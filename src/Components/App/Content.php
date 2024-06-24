@@ -1,11 +1,11 @@
 <?php
 
-namespace OrbtUI\Components\Page;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;
 
-class PageContent extends OrbtUI
+class Content extends OrbtUI
 {
 
     public function __construct(
@@ -33,19 +33,19 @@ class PageContent extends OrbtUI
         } else {
 
             $this->component()
-                ->classes()
-                    ->add('app-content')
-                    ->add('flex-column-fluid');
+                    ->classes()
+                        ->add('app-content')
+                        ->add('flex-column-fluid');
 
-            $root = new Component('div');
+            $container = new Component('div');
 
-            $root->classes()
-                ->add('app-container')
-                ->add('container-fluid');
+            $container->classes()
+                        ->add('app-container')
+                        ->add('container-fluid');
 
-            $root->child(new Component());
+            $container->child(new Component());
 
-            $this->component()->child($root);
+            $this->component()->child($container);
 
         }
 

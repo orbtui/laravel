@@ -1,11 +1,11 @@
 <?php
 
-namespace OrbtUI\Components\Page;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;
 
-class PageToolbar extends OrbtUI
+class Toolbar extends OrbtUI
 {
 
     public function __construct(
@@ -55,6 +55,8 @@ class PageToolbar extends OrbtUI
         $pageHeading->child($this->title);
 
         $pageTitle->child($pageHeading);
+
+        $this->component()->child($pageTitle);
 
     }
 

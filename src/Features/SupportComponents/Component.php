@@ -15,15 +15,16 @@ class Component
     use SupportProperties, SupportClasses, SupportAlpine, SupportLivewire;
 
     private ?string $tag = null;
-    private ?array $antecedents = [];
-    private ?array $childs = [];
+
+    private ?array $antecedents  = [];
+    private ?array $childs       = [];
     private ?array $predecessors = [];
+
     private ?ComponentSlot $slot = null;
 
-    public function __construct(string $tag = 'slot', array $childs = [])
+    public function __construct(string $tag = 'slot')
     {
         $this->tag    = $tag;
-        $this->childs = $childs;
     }
 
     public function tag($tag = 'div')
@@ -95,31 +96,40 @@ class Component
         }
 
         $content .= '<' . $this->tag;
-        $content .= !$this->classes()->empty()    ? (' class="' . implode(' ', $this->classes()->all()) . '"') : '';
+        $content .= !$this->classes()->empty()    ? (' class="' . implode(' ', $this->classes()->all()) . '"')       : '';
         $content .= !$this->properties()->empty() ? (' ' . implode(' ', $this->properties()->all()))                 : '';
         $content .= !$this->alpine()->empty()     ? (' ' . implode(' ', $this->alpine()->all()))                     : '';
         $content .= !$this->livewire()->empty()   ? (' ' . implode(' ', $this->livewire()->all()))                   : '';
-        $content .= '>';
 
-        foreach ($this->childs() as $child) {
+        if (sizeof($this->childs()) > 0) {
 
-            if ($child instanceof Component) {
+            $content .= '>';
 
-                if ($child->tag === 'slot') {
-                    $content .= '{{ $slot }}';
+            foreach ($this->childs() as $child) {
+
+                if ($child instanceof Component) {
+
+                    if ($child->tag === 'slot') {
+                        $content .= '{{ $slot }}';
+                    } else {
+                        $content .= $child->build();
+                    }
+
                 } else {
-                    $content .= $child->build();
+
+                    $content .= $child;
+
                 }
-
-            } else {
-
-                $content .= $child;
 
             }
 
-        }
+            $content .= '</' . $this->tag . '>';
 
-        $content .= '</' . $this->tag . '>';
+        } else {
+
+            $content .= '/>';
+
+        }
 
         foreach ($this->predecessors() as $predecessor) {
 
@@ -145,7 +155,7 @@ class Component
 
         $content .= `blade`;
 
-        return $content;
+        return Blade::compileString($content);
 
     }
 

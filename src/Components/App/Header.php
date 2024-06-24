@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Components\Header;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;
@@ -13,8 +13,7 @@ class Header extends OrbtUI
 
         $this->component()->tag('div');
 
-        $this->component()
-             ->properties()
+        $this->component()->properties()
                 ->add('id', 'kt_app_header')
                 ->add('data-kt-sticky', 'true')
                 ->add('data-kt-sticky-activate', '{default: true, lg: true}')
@@ -26,7 +25,18 @@ class Header extends OrbtUI
              ->classes()
                 ->add('app-header');
 
-        $this->component()->child(new Component('slot'));
+        $container = new Component('div');
+
+        $container->classes()
+            ->add('app-container')
+            ->add('container-fluid')
+            ->add('d-flex')
+            ->add('align-items-stretch')
+            ->add('justify-content-between');
+
+        $container->child(new Component('slot'));
+
+        $this->component()->child($container);
 
     }
 

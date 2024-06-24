@@ -1,6 +1,6 @@
 <?php
 
-namespace OrbtUI\Components\Page;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;

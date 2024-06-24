@@ -5,22 +5,20 @@ namespace OrbtUI;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-use OrbtUI\Mechanisms\FrontendAssets\ {
+use OrbtUI\Components\App\ {
+    Styles,
     Scripts,
-    Styles
+    Layout,
+    App,
+    Header,
+    Page,
+    Toolbar,
+    Content
 };
 
 use OrbtUI\Components\Grid\ {
     Grid,
     Column
-};
-
-use OrbtUI\Components\Layout\ {
-    Layout
-};
-
-use OrbtUI\Components\Header\ {
-    Header
 };
 
 use OrbtUI\Components\Sidebar\ {
@@ -29,12 +27,6 @@ use OrbtUI\Components\Sidebar\ {
     SidebarMenuItem,
     SidebarMenuGroup,
     SidebarFooter
-};
-
-use OrbtUI\Components\Page\ {
-    Page,
-    PageToolbar,
-    PageContent
 };
 
 use OrbtUI\Components\DataTable\ {
@@ -109,33 +101,37 @@ class OrbtUIServiceProvider extends ServiceProvider {
     protected function bootComponents()
     {
 
-        Blade::component('styles', Styles::class);
+        // App
+
+        Blade::component('styles',  Styles::class);
         Blade::component('scripts', Scripts::class);
+        Blade::component('layout',  Layout::class);
+        Blade::component('app',     App::class);
+        Blade::component('header',  Header::class);
+        Blade::component('page',    Page::class);
+        Blade::component('toolbar', Toolbar::class);
+        Blade::component('content', Content::class);
 
-        Blade::component('layout', Layout::class);
+        // Grids & Columns
 
-        Blade::component('grid', Grid::class);
+        Blade::component('grid',   Grid::class);
         Blade::component('column', Column::class);
 
-        Blade::component('header', Header::class);
 
-        Blade::component('sidebar', Sidebar::class);
-        Blade::component('sidebar-menu', SidebarMenu::class);
-        Blade::component('sidebar-menu-item', SidebarMenuItem::class);
+
+        Blade::component('sidebar',            Sidebar::class);
+        Blade::component('sidebar-menu',       SidebarMenu::class);
+        Blade::component('sidebar-menu-item',  SidebarMenuItem::class);
         Blade::component('sidebar-menu-group', SidebarMenuGroup::class);
-        Blade::component('sidebar-footer', SidebarFooter::class);
+        Blade::component('sidebar-footer',     SidebarFooter::class);
 
-        Blade::component('page',         Page::class);
-        Blade::component('page-toolbar', PageToolbar::class);
-        Blade::component('page-content', PageContent::class);
-
-        Blade::component('data-table', DataTable::class);
-        Blade::component('table', Table::class);
-        Blade::component('table-head', TableHead::class);
+        Blade::component('data-table',   DataTable::class);
+        Blade::component('table',        Table::class);
+        Blade::component('table-head',   TableHead::class);
         Blade::component('table-header', TableHeader::class);
-        Blade::component('table-body', TableBody::class);
-        Blade::component('table-row', TableRow::class);
-        Blade::component('table-cell', TableCell::class);
+        Blade::component('table-body',   TableBody::class);
+        Blade::component('table-row',    TableRow::class);
+        Blade::component('table-cell',   TableCell::class);
 
         Blade::component('form', Form::class);
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace OrbtUI\Components\Layout;
+namespace OrbtUI\Components\App;
 
 use OrbtUI\Features\SupportComponents\Component;
 use OrbtUI\OrbtUI;
 
-class Layout extends OrbtUI
+class App extends OrbtUI
 {
 
     protected function mount()
@@ -13,12 +13,9 @@ class Layout extends OrbtUI
 
         $this->component()->tag('body');
 
-        $this->component()
-            ->classes()
-                ->add('app-default');
+        $this->component()->classes()->add('app-default');
 
-        $this->component()
-            ->properties()
+        $this->component()->properties()
                 ->add('data-kt-app-layout',               'light-sidebar')
                 ->add('data-kt-app-header-fixed',         'true')
                 ->add('data-kt-app-sidebar-enabled',      'true')
