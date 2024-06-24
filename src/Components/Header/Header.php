@@ -8,7 +8,7 @@ use OrbtUI\OrbtUI;
 class Header extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('div');
@@ -26,7 +26,7 @@ class Header extends OrbtUI
              ->classes()
                 ->add('app-header');
 
-        $this->component()->append(new Component('slot'));
+        $this->component()->child(new Component('slot'));
 
     }
 

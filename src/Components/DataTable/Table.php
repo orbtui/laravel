@@ -11,7 +11,10 @@ class Table extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) { }
+
+    protected function mount()
+    {
 
         $this->component()->tag('table');
 
@@ -25,7 +28,7 @@ class Table extends OrbtUI
                 ->add('gs-7')
                 ->add('mb-0');
 
-        $this->component()->append(new Component());
+        $this->component()->child(new Component());
 
     }
 

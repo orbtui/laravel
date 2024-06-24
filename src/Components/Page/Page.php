@@ -10,7 +10,10 @@ class Page extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) {}
+
+    protected function mount()
+    {
 
         $this->component()->tag('div');
 
@@ -29,9 +32,9 @@ class Page extends OrbtUI
             ->add('mb-20')
             ->add('mb-md-2');
 
-        $root->append(new Component());
+        $root->child(new Component());
 
-        $this->component()->append($root);
+        $this->component()->child($root);
 
     }
 

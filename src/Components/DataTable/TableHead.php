@@ -11,7 +11,10 @@ class TableHead extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) { }
+
+    protected function mount()
+    {
 
         $this->component()->tag('thead');
 
@@ -19,7 +22,7 @@ class TableHead extends OrbtUI
             ->classes()
                 ->add('bg-gray-300');
 
-        $this->component()->append(new Component());
+        $this->component()->child(new Component());
 
     }
 

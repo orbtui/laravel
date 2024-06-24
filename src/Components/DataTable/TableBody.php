@@ -11,11 +11,14 @@ class TableBody extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) { }
+
+    protected function mount()
+    {
 
         $this->component()->tag('tbody');
 
-        $this->component()->append(new Component());
+        $this->component()->child(new Component());
 
     }
 

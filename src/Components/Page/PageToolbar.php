@@ -10,7 +10,10 @@ class PageToolbar extends OrbtUI
 
     public function __construct(
         public ?string $title = null
-    ) {
+    ) {}
+
+    protected function mount()
+    {
 
         $this->component()->tag('div');
 
@@ -49,11 +52,9 @@ class PageToolbar extends OrbtUI
                     ->add('justify-content-center')
                     ->add('my-0');
 
-        $pageHeading->append($title);
+        $pageHeading->child($this->title);
 
-        $pageTitle->append($pageHeading);
-
-
+        $pageTitle->child($pageHeading);
 
     }
 

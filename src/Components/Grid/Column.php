@@ -12,7 +12,10 @@ class Column extends OrbtUI
         public ?string $sm = null,
         public ?string $md = null,
         public ?string $lg = null
-    ) {
+    ) { }
+
+    protected function mount()
+    {
 
         $this->component()->tag('div');
 

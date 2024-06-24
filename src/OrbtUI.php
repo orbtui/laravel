@@ -22,6 +22,10 @@ class OrbtUI extends Blade
 
         return function(array $data) {
 
+            $this->component()->data($data);
+
+            $this->mount();
+
             return $this->component->build();
 
         };

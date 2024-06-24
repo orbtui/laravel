@@ -8,12 +8,12 @@ use OrbtUI\OrbtUI;
 class Form extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('form');
 
-        $this->component()->append(new Component());
+        $this->component()->child(new Component());
 
     }
 

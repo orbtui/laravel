@@ -7,7 +7,7 @@ use OrbtUI\OrbtUI;
 class Grid extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('div');

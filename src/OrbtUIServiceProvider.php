@@ -5,6 +5,11 @@ namespace OrbtUI;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
+use OrbtUI\Mechanisms\FrontendAssets\ {
+    Scripts,
+    Styles
+};
+
 use OrbtUI\Components\Grid\ {
     Grid,
     Column
@@ -103,6 +108,9 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
     protected function bootComponents()
     {
+
+        Blade::component('styles', Styles::class);
+        Blade::component('scripts', Scripts::class);
 
         Blade::component('layout', Layout::class);
 

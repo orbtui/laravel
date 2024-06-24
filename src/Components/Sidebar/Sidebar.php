@@ -8,12 +8,18 @@ use OrbtUI\OrbtUI;
 class Sidebar extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('div');
 
+        $this->component()
+            ->classes()
+                ->add('app-sidebar')
+                ->add('flex-column')
+                ->add('bg-light');
 
+        $this->component()->child(new Component());
 
     }
 

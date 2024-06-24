@@ -8,7 +8,7 @@ use OrbtUI\OrbtUI;
 class Layout extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('body');
@@ -50,11 +50,11 @@ class Layout extends OrbtUI
             ->add('flex-column')
             ->add('flex-column-fluid');
 
-        $page->append(new Component());
+        $page->child(new Component());
 
-        $root->append($page);
+        $root->child($page);
 
-        $this->component()->append($root);
+        $this->component()->child($root);
 
     }
 

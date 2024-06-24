@@ -10,7 +10,10 @@ class PageContent extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) {}
+
+    protected function mount()
+    {
 
         $this->component()->tag('div');
 
@@ -25,7 +28,7 @@ class PageContent extends OrbtUI
                     ->add('pb-15')
                     ->add('pb-lg-20');
 
-            $this->component()->append(new Component());
+            $this->component()->child(new Component());
 
         } else {
 
@@ -40,9 +43,9 @@ class PageContent extends OrbtUI
                 ->add('app-container')
                 ->add('container-fluid');
 
-            $root->append(new Component());
+            $root->child(new Component());
 
-            $this->component()->append($root);
+            $this->component()->child($root);
 
         }
 

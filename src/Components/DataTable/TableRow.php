@@ -11,11 +11,14 @@ class TableRow extends OrbtUI
 
     public function __construct(
         public bool $blank = false
-    ) {
+    ) {}
+
+    protected function mount()
+    {
 
         $this->component()->tag('tr');
 
-        $this->component()->append(new Component());
+        $this->component()->child(new Component());
 
     }
 

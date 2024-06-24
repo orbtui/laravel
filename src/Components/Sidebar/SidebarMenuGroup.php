@@ -8,12 +8,10 @@ use OrbtUI\OrbtUI;
 class SidebarMenuGroup extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('div');
-
-
 
     }
 

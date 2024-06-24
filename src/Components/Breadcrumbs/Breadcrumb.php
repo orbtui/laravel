@@ -8,11 +8,10 @@ use OrbtUI\OrbtUI;
 class Breadcrumb extends OrbtUI
 {
 
-    public function __construct()
+    protected function mount()
     {
 
         $this->component()->tag('div');
-
 
     }
 
