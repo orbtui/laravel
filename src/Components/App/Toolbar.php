@@ -10,10 +10,7 @@ class Toolbar extends Component
 
     public function __construct(
         public ?string $title = null
-    ) {}
-
-    protected function mount()
-    {
+    ) {
 
         $this->tag('div');
 

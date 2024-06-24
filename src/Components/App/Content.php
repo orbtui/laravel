@@ -10,10 +10,7 @@ class Content extends Component
 
     public function __construct(
         public bool $blank = false
-    ) {}
-
-    protected function mount()
-    {
+    ) {
 
         $this->tag('div');
 

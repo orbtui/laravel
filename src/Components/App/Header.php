@@ -8,8 +8,9 @@ use OrbtUI\OrbtUI as Component;
 class Header extends Component
 {
 
-    protected function mount()
-    {
+    public function __construct(
+
+    ) {
 
         $this->tag('div');
 

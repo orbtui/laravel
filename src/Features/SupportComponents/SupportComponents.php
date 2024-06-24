@@ -39,14 +39,14 @@ trait SupportComponents
         array_push($this->childs, $text);
     }
 
-    public function prepend($predecessor)
-    {
-        array_push($this->predecessors, $predecessor);
-    }
-
-    public function append($antecedent)
+    public function prepend($antecedent)
     {
         array_push($this->antecedents, $antecedent);
+    }
+
+    public function append($predecessor)
+    {
+        array_push($this->predecessors, $predecessor);
     }
 
     public function childs()
@@ -67,7 +67,7 @@ trait SupportComponents
     public function build()
     {
 
-        $content = `<<<'blade'`;
+        $content = '';
 
         foreach ($this->antecedents() as $antecedent) {
 
@@ -92,36 +92,27 @@ trait SupportComponents
         $content .= !$this->properties()->empty() ? (' ' . implode(' ', $this->properties()->all()))                 : '';
         $content .= !$this->alpine()->empty()     ? (' ' . implode(' ', $this->alpine()->all()))                     : '';
         $content .= !$this->livewire()->empty()   ? (' ' . implode(' ', $this->livewire()->all()))                   : '';
+        $content .= '>';
 
-        if (sizeof($this->childs()) > 0) {
+        foreach ($this->childs() as $child) {
 
-            $content .= '>';
+            if ($child instanceof Component) {
 
-            foreach ($this->childs() as $child) {
-
-                if ($child instanceof Component) {
-
-                    if ($child->tag === 'slot') {
-                        $content .= '{{ $slot }}';
-                    } else {
-                        $content .= $child->build();
-                    }
-
+                if ($child->tag === 'slot') {
+                    $content .= '{{ $slot }}';
                 } else {
-
-                    $content .= $child;
-
+                    $content .= $child->build();
                 }
+
+            } else {
+
+                $content .= $child;
 
             }
 
-            $content .= '</' . $this->tag . '>';
-
-        } else {
-
-            $content .= '/>';
-
         }
+
+        $content .= '</' . $this->tag . '>';
 
         foreach ($this->predecessors() as $predecessor) {
 
@@ -140,12 +131,6 @@ trait SupportComponents
             }
 
         }
-
-        foreach ($this->childs() as $child) {
-
-        }
-
-        $content .= `blade`;
 
         return Blade::compileString($content);
 

@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 use OrbtUI\Components\App\ {
-    Styles,
-    Scripts,
     Layout,
     App,
     Header,
@@ -45,6 +43,9 @@ use OrbtUI\Components\Form\ {
 
 use OrbtUI\Components\Button\ {
     Button
+};
+use OrbtUI\Components\Icon\ {
+    Icon
 };
 
 class OrbtUIServiceProvider extends ServiceProvider {
@@ -107,8 +108,6 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         // App
 
-        Blade::component('styles',  Styles::class);
-        Blade::component('scripts', Scripts::class);
         Blade::component('layout',  Layout::class);
         Blade::component('app',     App::class);
         Blade::component('header',  Header::class);
@@ -120,8 +119,6 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         Blade::component('grid',   Grid::class);
         Blade::component('column', Column::class);
-
-
 
         Blade::component('sidebar',            Sidebar::class);
         Blade::component('sidebar-menu',       SidebarMenu::class);
@@ -142,6 +139,8 @@ class OrbtUIServiceProvider extends ServiceProvider {
         Blade::component('form', Form::class);
 
         Blade::component('button', Button::class);
+
+        Blade::component('icon', Icon::class);
 
     }
 

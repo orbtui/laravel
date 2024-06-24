@@ -36,11 +36,13 @@ class SidebarMenuGroup extends Component
             'fs-7'
         ]);
 
-        $heading->append($this->label);
+        $heading->content($this->label);
 
         $content->parentOf($heading);
 
         $this->parentOf($content);
+
+        $this->append(new Component());
 
     }
 
