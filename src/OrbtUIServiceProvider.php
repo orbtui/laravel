@@ -32,6 +32,16 @@ use OrbtUI\Components\Page\ {
     PageContent
 };
 
+use OrbtUI\Components\DataTable\ {
+    DataTable,
+    Table,
+    TableHead,
+    TableHeader,
+    TableBody,
+    TableRow,
+    TableCell
+};
+
 use OrbtUI\Components\Form\ {
     Form
 };
@@ -110,6 +120,14 @@ class OrbtUIServiceProvider extends ServiceProvider {
         Blade::component('page',         Page::class);
         Blade::component('page-toolbar', PageToolbar::class);
         Blade::component('page-content', PageContent::class);
+
+        Blade::component('data-table', DataTable::class);
+        Blade::component('table', Table::class);
+        Blade::component('table-head', TableHead::class);
+        Blade::component('table-header', TableHeader::class);
+        Blade::component('table-body', TableBody::class);
+        Blade::component('table-row', TableRow::class);
+        Blade::component('table-cell', TableCell::class);
 
         Blade::component('form', Form::class);
 

@@ -5,7 +5,7 @@ namespace OrbtUI\Features\SupportAlpine;
 use OrbtUI\Features\SupportAttributes\SupportAttributes;
 use OrbtUI\Features\SupportProtection\SupportProtection;
 
-class Alpine
+class Alpine implements AlpineDirectives
 {
 
     use SupportAttributes, SupportProtection;
