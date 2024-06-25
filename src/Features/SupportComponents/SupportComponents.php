@@ -17,6 +17,8 @@ trait SupportComponents
 
     protected ?ComponentSlot $slot = null;
 
+    protected ?Component $parent = null;
+
     public function __construct(string $tag = 'slot')
     {
         $this->tag    = $tag;

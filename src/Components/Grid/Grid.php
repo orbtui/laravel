@@ -12,9 +12,11 @@ class Grid extends Component
 
         $this->tag('div');
 
-        $this
-            ->classes()
-                ->add('row');
+        $this->classes()->push([
+            'row'
+        ]);
+
+        $this->parentOf(new Component());
 
     }
 

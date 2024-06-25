@@ -5,7 +5,7 @@ namespace OrbtUI\Features\SupportLivewire;
 use OrbtUI\Features\SupportAttributes\SupportAttributes;
 use OrbtUI\Features\SupportProtection\SupportProtection;
 
-class Livewire
+class Livewire implements LivewireDirectives
 {
 
     use SupportAttributes, SupportProtection;

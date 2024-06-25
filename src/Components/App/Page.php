@@ -30,6 +30,7 @@ class Page extends Component
             'd-flex',
             'flex-column',
             'flex-column-fluid',
+            'mt-4',
             'mb-20',
             'mb-md-2'
         ]);

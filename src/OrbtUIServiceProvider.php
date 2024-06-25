@@ -37,15 +37,21 @@ use OrbtUI\Components\DataTable\ {
     TableCell
 };
 
-use OrbtUI\Components\Form\ {
-    Form
+use OrbtUI\Components\Forms\ {
+    Form,
+    TextInput
 };
 
 use OrbtUI\Components\Button\ {
     Button
 };
+
 use OrbtUI\Components\Icon\ {
     Icon
+};
+
+use OrbtUI\Components\Modal\ {
+    Modal
 };
 
 class OrbtUIServiceProvider extends ServiceProvider {
@@ -126,7 +132,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
         Blade::component('sidebar-menu-group', SidebarMenuGroup::class);
         Blade::component('sidebar-footer',     SidebarFooter::class);
 
-        Blade::component('data-table',   DataTable::class);
+        Blade::component('datatable' ,   DataTable::class);
         Blade::component('table',        Table::class);
         Blade::component('table-head',   TableHead::class);
         Blade::component('table-header', TableHeader::class);
@@ -136,11 +142,14 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         // Forms & Buttons
 
-        Blade::component('form', Form::class);
+        Blade::component('form',       Form::class);
+        Blade::component('text-input', TextInput::class);
 
         Blade::component('button', Button::class);
 
         Blade::component('icon', Icon::class);
+
+        Blade::component('modal', Modal::class);
 
     }
 
