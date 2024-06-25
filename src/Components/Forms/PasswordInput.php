@@ -76,11 +76,14 @@ class PasswordInput extends Component
 
             $this->tag('input');
 
-            $this->properties()->add('type', 'text');
-
             $this->properties()->push([
                 'type' => 'password',
                 'autocomplete' => 'off'
+            ]);
+
+            $this->classes()->push([
+                'form-control',
+                'form-control-' . $this->size
             ]);
 
             if ($this->id) {
