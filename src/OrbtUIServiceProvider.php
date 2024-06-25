@@ -39,7 +39,8 @@ use OrbtUI\Components\DataTable\ {
 
 use OrbtUI\Components\Forms\ {
     Form,
-    TextInput
+    TextInput,
+    PasswordInput
 };
 
 use OrbtUI\Components\Button\ {
@@ -144,6 +145,7 @@ class OrbtUIServiceProvider extends ServiceProvider {
 
         Blade::component('form',       Form::class);
         Blade::component('text-input', TextInput::class);
+        Blade::component('password-input', PasswordInput::class);
 
         Blade::component('button', Button::class);
 
